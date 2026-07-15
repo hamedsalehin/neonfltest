@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://neonfl.com/cart.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Complete your purchase of custom LED neon signs. Secure checkout via Stripe with fast shipping across the USA.">
+    <title>Checkout | Your Neon Creator Order</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="styles.css?v=4" as="style">
+    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body { 
+            overflow: auto; 
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 198, 251, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(255, 0, 127, 0.05) 0%, transparent 40%),
+                #f8fafc;
+            color: #1e1b4b;
+            font-family: 'Outfit', sans-serif;
+        }
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 48px;
+        }
+        @media (max-width: 1024px) {
+            .checkout-container { grid-template-columns: 1fr; }
+        }
+        
+        .checkout-header {
+            grid-column: 1 / -1;
+            margin-bottom: 20px;
+        }
+        .checkout-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: #1e1b4b; }
+        .checkout-header p { color: #475569; }
+
+        .order-summary-box, .customer-info-box, .payment-box {
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(31, 38, 135, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .summary-title { font-size: 1.25rem; font-weight: 700; color: #1e1b4b; border-bottom: 1px solid rgba(0, 0, 0, 0.05); padding-bottom: 16px; }
+        
+        .cart-page-items { display: flex; flex-direction: column; gap: 20px; }
+        .cart-page-item {
+            display: flex;
+            gap: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .cart-page-item .remove-item-btn {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            margin-top: 12px;
+            background: transparent !important;
+            border: 1px solid rgba(239, 68, 68, 0.3) !important;
+            color: #ef4444 !important;
+            padding: 6px 12px !important;
+            border-radius: 6px !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.2s !important;
+            display: inline-block !important;
+            width: fit-content !important;
+            align-self: flex-start;
+        }
+        .cart-page-item .remove-item-btn:hover {
+            background: #ef4444 !important;
+            color: #fff !important;
+            border-color: #ef4444 !important;
+        }
+        .cart-page-item-img {
+            width: 120px;
+            height: 120px;
+            background: #060608;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cart-page-item-img svg { width: 90%; height: 90%; }
+        
+        .cart-page-item-info { flex: 1; }
+        .cart-page-item-name { font-size: 1.1rem; font-weight: 700; color: #1e1b4b; margin-bottom: 4px; }
+        .cart-page-item-details { font-size: 0.85rem; color: #475569; line-height: 1.5; }
+        .cart-page-item-price { font-size: 1.2rem; font-weight: 700; color: #10b981; margin-top: 8px; }
+
+        .payment-box {
+            height: fit-content;
+            position: sticky;
+            top: 24px;
+        }
+        .payment-row { display: flex; justify-content: space-between; margin-bottom: 12px; color: #475569; font-size: 0.95rem; }
+        .payment-row.total { color: #1e1b4b; font-size: 1.5rem; font-weight: 800; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0, 0, 0, 0.05); }
+        
+        .place-order-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.8) 0%, rgba(0, 198, 251, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 100px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 
+                0 8px 24px rgba(255, 0, 127, 0.2),
+                0 4px 12px rgba(0, 198, 251, 0.15),
+                inset 0 3px 6px rgba(255, 255, 255, 0.65),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.08);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .place-order-btn::before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            right: 2px;
+            height: 42%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 100px 100px 0 0;
+            pointer-events: none;
+        }
+        .place-order-btn:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 
+                0 12px 28px rgba(255, 0, 127, 0.3),
+                0 6px 16px rgba(0, 198, 251, 0.2),
+                inset 0 4px 8px rgba(255, 255, 255, 0.8),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.9) 0%, rgba(0, 198, 251, 0.9) 100%);
+        }
+        
+        .back-to-shop {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+        .back-to-shop:hover { color: #ff007f; }
+
+        .customer-info-box {
+            padding: 32px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; color: #475569; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 14px;
+            color: #1e1b4b;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #ff007f;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
+        }
+        
+        .shipping-method-box {
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(31, 38, 135, 0.04);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+        .shipping-rate-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .shipping-rate-card:hover {
+            border-color: rgba(255, 0, 127, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .shipping-rate-card.selected {
+            border-color: #ff007f;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.08);
+        }
+        .shipping-rate-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .shipping-rate-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .shipping-rate-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #1e1b4b;
+        }
+        .shipping-rate-desc {
+            font-size: 0.78rem;
+            color: #475569;
+            line-height: 1.3;
+        }
+        .shipping-rate-price {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #ff007f;
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Checkout | Your Neon Creator Order">
+    <meta property="og:description" content="Complete your purchase of custom LED neon signs. Secure checkout via Stripe with fast shipping across the USA.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/cart.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Checkout | Your Neon Creator Order">
+    <meta name="twitter:description" content="Complete your purchase of custom LED neon signs. Secure checkout via Stripe with fast shipping across the USA.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+    <div class="checkout-container">
+        <header class="checkout-header">
+            <a href="customizer.html" class="back-to-shop">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Designer
+            </a>
+            <h1>Checkout</h1>
+            <p id="item-count-title">You have 0 items in your cart</p>
+        </header>
+
+        <section class="checkout-main">
+            <div class="customer-info-box">
+                <div class="summary-title">Customer Information</div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="cust-name" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="cust-email" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Shipping Address</label>
+                    <textarea id="cust-address" rows="3" placeholder="123 Neon St, Bright City, FL 33309"></textarea>
+                </div>
+            </div>
+
+            <!-- Shipping Method Selector (Hidden by default, shown when address has valid zip code) -->
+            <div class="shipping-method-box" id="shipping-method-box" style="margin-top: 32px; display: none;">
+                <div class="summary-title">Shipping Method</div>
+                
+                <!-- LTL Freight Options Surcharge Notice -->
+                <div id="freight-options-container" style="display: none; padding: 16px; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.2); border-radius: 12px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: #d97706; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+                        ⚠️ Heavy/Oversized Order Detected
+                    </div>
+                    <p style="font-size: 0.8rem; color: #b45309; margin-top: 6px; line-height: 1.4;">
+                        Your order requires Less-Than-Truckload (LTL) Freight. Please select accessorial options below if applicable:
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; color: #1e1b4b;">
+                            <input type="checkbox" id="freight-residential" checked> Deliver to a Residential Address (+$55.00)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; color: #1e1b4b;">
+                            <input type="checkbox" id="freight-liftgate"> Require Liftgate Unloading Service (+$45.00)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="shipping-rates-list" id="shipping-rates-list" style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Rates populated via JS -->
+                </div>
+            </div>
+
+            <div class="order-summary-box" style="margin-top: 32px;">
+                <div class="summary-title">Order Items</div>
+                <div class="cart-page-items" id="cart-page-items-list">
+                    <!-- Items injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="payment-box">
+            <div class="summary-title">Order Summary</div>
+            <div class="payment-row">
+                <span>Subtotal</span>
+                <span id="page-subtotal">$0.00</span>
+            </div>
+            <div class="payment-row">
+                <span>Shipping</span>
+                <span id="page-shipping">Calculated at address</span>
+            </div>
+            <div class="payment-row">
+                <span>Tax</span>
+                <span id="page-tax">$0.00</span>
+            </div>
+            <div class="payment-row total">
+                <span>Total</span>
+                <span id="page-total">$0.00</span>
+            </div>
+            
+            <button class="place-order-btn" id="place-order-btn">Complete Purchase</button>
+            <p class="shipping-notice" style="margin-top: 16px;">By clicking, you agree to our terms.</p>
+        </aside>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    <script src="cart.js?v=8"></script>
+</body>
+</html>

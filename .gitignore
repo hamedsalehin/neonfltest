@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER commit these - add them to Vercel dashboard instead)
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary/scratch files
+scratch_test.js
+skills.zip
+skills_final.zip
+skills_extracted/
+
+# VS Code
+.vscode/
+
+# Backups and scripts
+public/images_backup/
+compress-images.js
+scratch/
+*.zip

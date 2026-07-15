@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BWHV4G49TR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found | Nano Neons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preload" href="landing.css?v=7" as="style">
+    <link rel="stylesheet" href="landing.css?v=7">
+    <style>
+        body {
+            background: #060608;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow Background */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: 20%;
+            left: 15%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 198, 251, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: 20%;
+            right: 15%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .error-container {
+            text-align: center;
+            z-index: 10;
+            padding: 40px;
+            background: rgba(15, 15, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, var(--neon-pink, #ff007f), var(--neon-cyan, #00c6fb));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 0, 127, 0.2);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .error-desc {
+            color: var(--text-secondary, #94a3b8);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-pink, #ff007f), var(--neon-cyan, #00c6fb));
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.5), 0 0 10px rgba(0, 198, 251, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="404 Page Not Found | Nano Neons">
+    <meta property="og:description" content="Design premium custom LED neon signs for business and home.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="404 Page Not Found | Nano Neons">
+    <meta name="twitter:description" content="Design premium custom LED neon signs for business and home.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Sign Has Faded</h2>
+        <p class="error-desc">Looks like this design or page has gone dark. The link you followed might be broken, or the page has been moved.</p>
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

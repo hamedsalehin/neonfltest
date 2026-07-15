@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://neonfl.com/storefront-signs">
+    <title>Storefront LED Signs | Custom Lightbox Cabinet Signs</title>
+    <!-- Description for SEO -->
+    <meta name="description" content="Shop durable storefront LED signs & lightboxes. Custom translucent graphics, weather-resistant cabinet frame. Perfect signage for storefront visibility.">
+    <!-- Google Fonts Outfit & Space Grotesk -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="landing.css?v=7" as="style">
+    <link rel="stylesheet" href="landing.css?v=7">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            background-color: var(--bg-light, #f8fafc);
+            color: #1e1b4b;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header-spacer {
+            height: 90px;
+        }
+
+        .product-page-container {
+            padding: 60px 0 80px;
+        }
+
+        .product-main-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .product-main-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .product-image-container {
+            background: #09090b;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-panel {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(31, 38, 135, 0.03);
+            border: 1px solid rgba(200, 200, 220, 0.4);
+        }
+
+        @media (max-width: 576px) {
+            .product-info-panel {
+                padding: 25px;
+            }
+        }
+
+        .product-info-panel h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e1b4b;
+        }
+
+        .product-category-tag {
+            color: var(--neon-pink);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .product-price-large {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin: 15px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-price-large span {
+            font-size: 1rem;
+            color: #64748b;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .product-specs-list {
+            margin: 25px 0;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 20px 0;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .spec-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: #1e1b4b;
+            font-weight: 600;
+        }
+
+        .product-intro-text {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #475569;
+            margin-bottom: 25px;
+        }
+
+        .seo-article-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(31,38,135,0.02);
+            border: 1px solid rgba(200, 200, 220, 0.3);
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .seo-article-section {
+                padding: 30px;
+            }
+        }
+
+        .seo-article-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: #1e1b4b;
+        }
+
+        .seo-article-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .seo-article-section p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .seo-article-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .seo-article-section li {
+            margin-bottom: 8px;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Storefront LED Signs | Custom Lightbox Cabinet Signs | Nano Sign">
+    <meta property="og:description" content="Shop durable storefront LED signs & lightboxes. Custom translucent graphics, weather-resistant cabinet frame. Perfect signage for storefront visibility.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/storefront-signs">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Storefront LED Signs | Custom Lightbox Cabinet Signs | Nano Sign">
+    <meta name="twitter:description" content="Shop durable storefront LED signs & lightboxes. Custom translucent graphics, weather-resistant cabinet frame. Perfect signage for storefront visibility.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+
+    <!-- ─── HEADER / NAVIGATION ────────────────────────────────────────────── -->
+    <header class="site-header site-header-scrolled" id="site-header" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px);">
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/#hero">Home</a></li>
+                    <li><a href="customizer.html">Customizer</a></li>
+                    <li><a href="/#shop">Shop</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Colors</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li id="auth-nav-item"><a href="login.html" class="auth-login-link" style="text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; transition: var(--transition); border: 1px solid rgba(0,0,0,0.15); padding: 8px 16px; border-radius: 100px; background: rgba(255,255,255,0.5);">Sign In</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="quote.html" class="glow-btn outline" style="padding: 10px 24px; font-size: 0.9rem; border-color: rgba(0,0,0,0.1);">
+                    Upload Logo / Get Quote
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <div class="product-page-container">
+        <div class="container">
+            
+            <!-- MAIN PRODUCT DETAILS SECTION -->
+            <div class="product-main-grid">
+                <div class="product-image-container">
+                    <img src="images/shop/storefront_sign.webp" alt="Storefront LED Cabinet Sign Lightbox">
+                </div>
+                
+                <div class="product-info-panel">
+                    <span class="product-category-tag">Commercial & Retail Signs</span>
+                    <h1>Storefront LED Sign</h1>
+                    
+                    <div class="product-price-large">
+                        $399.00 <span>$499.00</span>
+                    </div>
+                    
+                    <p class="product-intro-text">
+                        Maximize your business's presence day and night with our heavy-duty storefront lightbox cabinet signs. Combining thick powdercoated frames, weatherproofing, and backlit LED panels for high visual reach.
+                    </p>
+                    
+                    <button class="glow-btn pink-glow" id="buy-now-btn" style="width: 100%; text-align: center; justify-content: center; font-size: 1.1rem; padding: 14px 0;">
+                        Buy Now / Add to Cart
+                    </button>
+                    
+                    <div class="product-specs-list">
+                        <div class="spec-row">
+                            <span class="spec-label">Dimensions</span>
+                            <span class="spec-value">36" x 24" (91 x 61 cm)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Cabinet Material</span>
+                            <span class="spec-value">Extruded Aluminum & Steel Reinforcements</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Face Material</span>
+                            <span class="spec-value">translucent Acrylic with UV Graphic Print</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Light Source</span>
+                            <span class="spec-value">High-Output 12V LED Grid Arrays</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Weatherproofing</span>
+                            <span class="spec-value">IP65 Certified Outdoor (Wind-Resistant)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Mounting Type</span>
+                            <span class="spec-value">Wall Mount / Projection Mount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO DETAILED ARTICLE SECTION -->
+            <div class="seo-article-section">
+                <h2>What Is an LED Cabinet Sign & How Does it Work?</h2>
+                <p>
+                    An LED cabinet sign, also referred to as a storefront lightbox sign, is an enclosed structural cabinet engineered to project high-luminance graphic advertisements. The outer chassis is fabricated using heavy-duty <strong>extruded aluminum profiles</strong> that are welded and powder-coated to resist rusting, weathering, and thermal cracking under intense sunlight. The internal backing plate is lined with parallel rows of high-intensity LED light modules or vertical light bars spaced at exact pitch parameters to ensure even illumination.
+                </p>
+                <p>
+                    The sign face is cut from a heavy-duty translucent acrylic sheet or impact-resistant polycarbonate. The branding artwork is printed directly onto this material using specialized UV-cured translucent inks that diffuse passing light without fading. By incorporating wide-angle dispersion optics (170° lenses) on our internal LED arrays and optimizing the cabinet depth (typically 6 inches), the light is evenly diffused across the face. This creates a bright, consistent backdrop without any unsightly shadows, visual hotspots, or fluorescent tube flicker.
+                </p>
+
+                <h2>Why Storefront Lightboxes Are Critical for Retail Locations</h2>
+                <p>
+                    A premium storefront sign is your brick-and-mortar location's 24-hour visual calling card. Lightbox cabinet signs provide massive advantages for shopping districts, gas stations, and standalone storefronts:
+                </p>
+                <ul>
+                    <li><strong>Continuous Nighttime Exposure:</strong> Converts your location into an eye-catching billboard at night, keeping your brand visible to passing traffic even when closed.</li>
+                    <li><strong>Exceptional Wind & Storm Resistance:</strong> Built with thick aluminum framing, internal support braces, and impact-resistant polycarbonate faces to withstand strong wind forces.</li>
+                    <li><strong>Even Light Diffusion:</strong> Unlike older fluorescent T8 ballasts, our solid-state low-voltage LED arrays deliver consistent, flicker-free lighting while consuming up to 65% less electricity.</li>
+                    <li><strong>Flexible Sign Face Updates:</strong> The aluminum cabinet retains its structure permanently; if you rebrand, you can simply slide out the acrylic face and replace it with a new graphic without purchasing a new sign frame.</li>
+                </ul>
+
+                <h2>Installation and Electrical Requirements</h2>
+                <p>
+                    Our storefront LED signs are pre-wired for standard electrical connections. They can be mounted in multiple configurations depending on structural availability:
+                </p>
+                <p>
+                    <strong>Flat Wall Mount:</strong> Secured directly to stucco, brick, wood, or concrete building facades using heavy-duty masonry anchors. This flush profile is highly recommended for storefront entrances.
+                </p>
+                <p>
+                    <strong>Double-Sided Projection:</strong> Mounted perpendicular to the building facade using projection brackets. This allows motorists and pedestrians walking down the block to easily view your branding from both directions.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── OTHER PRODUCTS CAROUSEL ─────────────────────────────────────────── -->
+    <section class="related-products-section">
+        <div class="container">
+            <h3>You Might Also Like</h3>
+            <div class="carousel-wrapper-relative">
+                <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                <div class="horizontal-scroll-container">
+                    <a class="related-product-card" href="programmable-led-sign" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/programmable_led.webp" alt="Programmable LED Sign Display Close-up" loading="lazy">
+                        <h4 class="related-product-title">Programmable LED Sign</h4>
+                        <span class="related-product-price">$298.00</span>
+                    </a>
+                    <a class="related-product-card" href="channel-letters" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/channel_letters.webp" alt="LED Channel Letters Sign Face-Lit" loading="lazy">
+                        <h4 class="related-product-title">LED Channel Letters</h4>
+                        <span class="related-product-price">$499.00</span>
+                    </a>
+                    <a class="related-product-card" href="backlit-sign" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/backlit_sign.webp" alt="Backlit LED Circular Sign Halo Effect" loading="lazy">
+                        <h4 class="related-product-title">Backlit LED Sign</h4>
+                        <span class="related-product-price">$349.00</span>
+                    </a>
+                    <a class="related-product-card" href="/#shop" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/good_vibes_neon.webp" alt="Good Vibes Only Neon Sign" loading="lazy">
+                        <h4 class="related-product-title">Good Vibes Only</h4>
+                        <span class="related-product-price">$169.00</span>
+                    </a>
+                </div>
+                <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+                </a>
+                <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="customizer.html">Custom Text Signs</a></li>
+                    <li><a href="/#shop">Ready-Made Designs</a></li>
+                    <li><a href="programmable-led-sign">Programmable LED Sign</a></li>
+                    <li><a href="channel-letters">LED Channel Letters</a></li>
+                    <li><a href="storefront-signs">Storefront LED Sign</a></li>
+                    <li><a href="backlit-sign">Backlit LED Sign</a></li>
+                    <li><a href="quote.html">UV Printed Logos / Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/#shop">Shop Popular Neons</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Color Panel</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><a href="#" class="obfuscated-email" data-user="nanosign1" data-domain="gmail.com"></a></li>
+                    <li><a href="tel:+13059671005" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 1005</a></li>
+                    <li><a href="tel:+13059679654" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 9654</a></li>
+                    <li><p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;"><a href="https://maps.google.com/?q=Nano+signs+Oakland+Park+FL" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">4567 Powerline Rd,<br>Oakland Park, FL 33309</a></p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Nano Sign. All rights reserved. Handcrafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- Buy Button Logic -->
+    <script>
+        function scrollCarousel(button, direction) {
+            const container = button.parentElement.querySelector('.horizontal-scroll-container');
+            if (container) {
+                const card = container.querySelector('.related-product-card');
+                const scrollAmount = card ? card.offsetWidth + 24 : 304;
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buyBtn = document.getElementById('buy-now-btn');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', () => {
+                    let cart = JSON.parse(localStorage.getItem('neon_cart')) || [];
+                    
+                    const cartItem = {
+                        text: 'Storefront LED Sign',
+                        fontName: 'Commercial LED',
+                        colorName: 'Warm White',
+                        widthIn: 36,
+                        heightIn: 24,
+                        widthCm: 91,
+                        heightCm: 61,
+                        backing: 'cut-to-shape',
+                        backingColor: 'acrylic',
+                        environment: 'outdoor',
+                        price: 399.00,
+                        svgMarkup: `<img src="images/shop/storefront_sign.webp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`,
+                        timestamp: Date.now(),
+                        quantity: 1
+                    };
+
+                    const isSameCartItem = (a, b) => {
+                        return a.text === b.text &&
+                               a.fontName === b.fontName &&
+                               a.colorName === b.colorName &&
+                               a.widthCm === b.widthCm &&
+                               a.heightCm === b.heightCm &&
+                               a.backing === b.backing &&
+                               a.backingColor === b.backingColor &&
+                               a.environment === b.environment;
+                    };
+
+                    const existingIndex = cart.findIndex(item => isSameCartItem(item, cartItem));
+                    if (existingIndex > -1) {
+                        cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+                    } else {
+                        cart.push(cartItem);
+                    }
+
+                    localStorage.setItem('neon_cart', JSON.stringify(cart));
+                    window.location.href = 'cart.html';
+                });
+            }
+
+            // Mobile Nav Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    <!-- Email Obfuscation Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+          const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+          if (el.tagName === 'A') {
+            el.setAttribute('href', 'mailto:' + email);
+            if (!el.textContent.trim()) {
+              el.textContent = email;
+            }
+          } else {
+            el.textContent = email;
+          }
+        });
+      });
+    </script>
+</body>
+</html>

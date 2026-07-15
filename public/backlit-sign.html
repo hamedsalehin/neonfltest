@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://neonfl.com/backlit-sign">
+    <title>Backlit LED Signs | Custom Halo | Lit Storefront Logo Signs</title>
+    <!-- Description for SEO -->
+    <meta name="description" content="Shop premium backlit LED signs with elegant rear halo-glow lighting. Custom circular steel frames, standoff spacers. Perfect for boutique and lobby signs.">
+    <!-- Google Fonts Outfit & Space Grotesk -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="landing.css?v=7" as="style">
+    <link rel="stylesheet" href="landing.css?v=7">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            background-color: var(--bg-light, #f8fafc);
+            color: #1e1b4b;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header-spacer {
+            height: 90px;
+        }
+
+        .product-page-container {
+            padding: 60px 0 80px;
+        }
+
+        .product-main-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .product-main-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .product-image-container {
+            background: #09090b;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-panel {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(31, 38, 135, 0.03);
+            border: 1px solid rgba(200, 200, 220, 0.4);
+        }
+
+        @media (max-width: 576px) {
+            .product-info-panel {
+                padding: 25px;
+            }
+        }
+
+        .product-info-panel h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e1b4b;
+        }
+
+        .product-category-tag {
+            color: var(--neon-pink);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .product-price-large {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin: 15px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-price-large span {
+            font-size: 1rem;
+            color: #64748b;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .product-specs-list {
+            margin: 25px 0;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 20px 0;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .spec-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: #1e1b4b;
+            font-weight: 600;
+        }
+
+        .product-intro-text {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #475569;
+            margin-bottom: 25px;
+        }
+
+        .seo-article-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(31,38,135,0.02);
+            border: 1px solid rgba(200, 200, 220, 0.3);
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .seo-article-section {
+                padding: 30px;
+            }
+        }
+
+        .seo-article-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: #1e1b4b;
+        }
+
+        .seo-article-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .seo-article-section p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .seo-article-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .seo-article-section li {
+            margin-bottom: 8px;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Backlit LED Signs | Custom Halo-Lit Storefront Logo Signs | Nano Sign">
+    <meta property="og:description" content="Shop premium backlit LED signs with elegant rear halo-glow lighting. Custom circular steel frames, standoff spacers. Perfect for boutique and lobby signs.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/backlit-sign">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Backlit LED Signs | Custom Halo-Lit Storefront Logo Signs | Nano Sign">
+    <meta name="twitter:description" content="Shop premium backlit LED signs with elegant rear halo-glow lighting. Custom circular steel frames, standoff spacers. Perfect for boutique and lobby signs.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+
+    <!-- ─── HEADER / NAVIGATION ────────────────────────────────────────────── -->
+    <header class="site-header site-header-scrolled" id="site-header" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px);">
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/#hero">Home</a></li>
+                    <li><a href="customizer.html">Customizer</a></li>
+                    <li><a href="/#shop">Shop</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Colors</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li id="auth-nav-item"><a href="login.html" class="auth-login-link" style="text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; transition: var(--transition); border: 1px solid rgba(0,0,0,0.15); padding: 8px 16px; border-radius: 100px; background: rgba(255,255,255,0.5);">Sign In</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="quote.html" class="glow-btn outline" style="padding: 10px 24px; font-size: 0.9rem; border-color: rgba(0,0,0,0.1);">
+                    Upload Logo / Get Quote
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <div class="product-page-container">
+        <div class="container">
+            
+            <!-- MAIN PRODUCT DETAILS SECTION -->
+            <div class="product-main-grid">
+                <div class="product-image-container">
+                    <img src="images/shop/backlit_sign.webp" alt="Backlit LED circular storefront Sign Halo glow effect">
+                </div>
+                
+                <div class="product-info-panel">
+                    <span class="product-category-tag">Commercial & Retail Signs</span>
+                    <h1>Backlit LED Sign</h1>
+                    
+                    <div class="product-price-large">
+                        $349.00 <span>$449.00</span>
+                    </div>
+                    
+                    <p class="product-intro-text">
+                        Create an elegant, high-end visual atmosphere for your brand. Projects soft, high-contrast LED illumination backward onto your wall surface to encircle your custom logo in a glowing halo outline.
+                    </p>
+                    
+                    <button class="glow-btn pink-glow" id="buy-now-btn" style="width: 100%; text-align: center; justify-content: center; font-size: 1.1rem; padding: 14px 0;">
+                        Buy Now / Add to Cart
+                    </button>
+                    
+                    <div class="product-specs-list">
+                        <div class="spec-row">
+                            <span class="spec-label">Diameter</span>
+                            <span class="spec-value">24" x 24" (61 x 61 cm)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Face Shell</span>
+                            <span class="spec-value">Precision Laser-Cut Stainless Steel / Acrylic</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Illumination Style</span>
+                            <span class="spec-value">Reverse-Lit / Rear Halo Glow</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Color Profile</span>
+                            <span class="spec-value">Ice Blue (Other Custom Colors Available)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Standoff Spacers</span>
+                            <span class="spec-value">1.5" Satin Aluminum Stand-offs</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Certifications</span>
+                            <span class="spec-value">IP65 Waterproof / UL Certified Drivers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO DETAILED ARTICLE SECTION -->
+            <div class="seo-article-section">
+                <h2>What Is a Backlit Halo LED Sign and How Does It Glow?</h2>
+                <p>
+                    A backlit LED sign, also known as a reverse-lit sign or <strong>halo-lit sign</strong>, projects illumination backward rather than outward. The front face and side returns of the sign are constructed from opaque materials (such as powder-coated stainless steel, copper, brushed aluminum, or solid matte black acrylic) which completely block light transmission. Inside the hollow back cavity of the sign, high-output flexible LED strips are installed facing the interior wall surface.
+                </p>
+                <p>
+                    During installation, the backlit logo is mounted using 1.5-inch aluminum <strong>standoff spacers</strong>. This elevates the sign off the wall, creating a physical air gap. When powered, the LEDs project light onto the wall surface behind the logo. The wall acts as a natural matte reflector, scattering the light rays outward to create a soft, diffused glowing border. This atmospheric silhouette outlines the brand logo without glaring directly into the customer's eyes.
+                </p>
+
+                <h2>Why Backlit Signs are Preferred for Boutique Storefronts and Lobbies</h2>
+                <p>
+                    While standard face-lit signage is built for raw daytime brightness, backlit signs are chosen by architects and designers for their refined aesthetic qualities:
+                </p>
+                <ul>
+                    <li><strong>Refined, Elegant Aesthetic:</strong> The soft halo light creates an artistic look that communicates luxury, quality, and professionalism, which is perfect for spas, hotels, boutique shops, and office reception desks.</li>
+                    <li><strong>Shadow Silhouette Contrast:</strong> By keeping the metal logo face dark and lighting the wall background, these signs provide readability even under dim indoor lighting conditions.</li>
+                    <li><strong>Diffused Ambient Lighting:</strong> Eliminates direct glaring light, replacing it with a soft glow that serves as functional accent lighting for reception and office lobbies.</li>
+                    <li><strong>High-Contrast Material Options:</strong> Available in brushed gold, matte black, and satin silver finishes, matching modern interior design elements.</li>
+                </ul>
+
+                <h2>Mounting Surfaces and Reflective Optics Guidelines</h2>
+                <p>
+                    Since backlit halo signage relies on bouncing light off the mounting wall, the color and texture of the surface directly affect the quality of the glow:
+                </p>
+                <p>
+                    <strong>Recommended Surfaces:</strong> Light-colored walls with a matte or satin finish (such as light concrete, flat white drywall, stucco, or light wood panels) are ideal because they reflect light evenly.
+                </p>
+                <p>
+                    <strong>Surfaces to Avoid:</strong> Dark, light-absorbing walls (such as black brick) reduce the glow, whereas highly glossy or mirrored surfaces can display reflections of the internal LED diodes instead of a soft halo glow.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── OTHER PRODUCTS CAROUSEL ─────────────────────────────────────────── -->
+    <section class="related-products-section">
+        <div class="container">
+            <h3>You Might Also Like</h3>
+            <div class="carousel-wrapper-relative">
+                <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                <div class="horizontal-scroll-container">
+                    <a class="related-product-card" href="programmable-led-sign" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/programmable_led.webp" alt="Programmable LED Sign Display Close-up" loading="lazy">
+                        <h4 class="related-product-title">Programmable LED Sign</h4>
+                        <span class="related-product-price">$298.00</span>
+                    </a>
+                    <a class="related-product-card" href="channel-letters" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/channel_letters.webp" alt="LED Channel Letters Sign Face-Lit" loading="lazy">
+                        <h4 class="related-product-title">LED Channel Letters</h4>
+                        <span class="related-product-price">$499.00</span>
+                    </a>
+                    <a class="related-product-card" href="storefront-signs" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/storefront_sign.webp" alt="Storefront LED Sign Cabinet Lightbox" loading="lazy">
+                        <h4 class="related-product-title">Storefront LED Sign</h4>
+                        <span class="related-product-price">$399.00</span>
+                    </a>
+                    <a class="related-product-card" href="/#shop" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/good_vibes_neon.webp" alt="Good Vibes Only Neon Sign" loading="lazy">
+                        <h4 class="related-product-title">Good Vibes Only</h4>
+                        <span class="related-product-price">$169.00</span>
+                    </a>
+                </div>
+                <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+                </a>
+                <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="customizer.html">Custom Text Signs</a></li>
+                    <li><a href="/#shop">Ready-Made Designs</a></li>
+                    <li><a href="programmable-led-sign">Programmable LED Sign</a></li>
+                    <li><a href="channel-letters">LED Channel Letters</a></li>
+                    <li><a href="storefront-signs">Storefront LED Sign</a></li>
+                    <li><a href="backlit-sign">Backlit LED Sign</a></li>
+                    <li><a href="quote.html">UV Printed Logos / Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/#shop">Shop Popular Neons</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Color Panel</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><a href="#" class="obfuscated-email" data-user="nanosign1" data-domain="gmail.com"></a></li>
+                    <li><a href="tel:+13059671005" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 1005</a></li>
+                    <li><a href="tel:+13059679654" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 9654</a></li>
+                    <li><p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;"><a href="https://maps.google.com/?q=Nano+signs+Oakland+Park+FL" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">4567 Powerline Rd,<br>Oakland Park, FL 33309</a></p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Nano Sign. All rights reserved. Handcrafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- Buy Button Logic -->
+    <script>
+        function scrollCarousel(button, direction) {
+            const container = button.parentElement.querySelector('.horizontal-scroll-container');
+            if (container) {
+                const card = container.querySelector('.related-product-card');
+                const scrollAmount = card ? card.offsetWidth + 24 : 304;
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buyBtn = document.getElementById('buy-now-btn');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', () => {
+                    let cart = JSON.parse(localStorage.getItem('neon_cart')) || [];
+                    
+                    const cartItem = {
+                        text: 'Backlit LED Sign',
+                        fontName: 'Commercial LED',
+                        colorName: 'Ice Blue',
+                        widthIn: 24,
+                        heightIn: 24,
+                        widthCm: 61,
+                        heightCm: 61,
+                        backing: 'cut-to-shape',
+                        backingColor: 'acrylic',
+                        environment: 'outdoor',
+                        price: 349.00,
+                        svgMarkup: `<img src="images/shop/backlit_sign.webp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`,
+                        timestamp: Date.now(),
+                        quantity: 1
+                    };
+
+                    const isSameCartItem = (a, b) => {
+                        return a.text === b.text &&
+                               a.fontName === b.fontName &&
+                               a.colorName === b.colorName &&
+                               a.widthCm === b.widthCm &&
+                               a.heightCm === b.heightCm &&
+                               a.backing === b.backing &&
+                               a.backingColor === b.backingColor &&
+                               a.environment === b.environment;
+                    };
+
+                    const existingIndex = cart.findIndex(item => isSameCartItem(item, cartItem));
+                    if (existingIndex > -1) {
+                        cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+                    } else {
+                        cart.push(cartItem);
+                    }
+
+                    localStorage.setItem('neon_cart', JSON.stringify(cart));
+                    window.location.href = 'cart.html';
+                });
+            }
+
+            // Mobile Nav Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    <!-- Email Obfuscation Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+          const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+          if (el.tagName === 'A') {
+            el.setAttribute('href', 'mailto:' + email);
+            if (!el.textContent.trim()) {
+              el.textContent = email;
+            }
+          } else {
+            el.textContent = email;
+          }
+        });
+      });
+    </script>
+</body>
+</html>

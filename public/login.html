@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://neonfl.com/login.html">
+    <title>Sign In & Join Member Club | Nano Neons</title>
+    <!-- Description for SEO -->
+    <meta name="description" content="Sign in or register an account at Nano Neons to save your visual customizer designs and activate your first-time member 15% order discount.">
+    <!-- Google Fonts Outfit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --text-primary: #1e1b4b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --neon-pink: #ff007f;
+            --neon-cyan: #00c6fb;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 20px 50px rgba(31, 38, 135, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 198, 251, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(255, 0, 127, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(157, 78, 221, 0.05) 0%, transparent 50%),
+                var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 28px;
+            box-shadow: var(--glass-shadow);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: cardAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes cardAppear {
+            0% { transform: scale(0.9) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .back-home {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: var(--text-primary);
+            transform: translateX(-4px);
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brand-logo {
+            height: 38px;
+            margin-bottom: 12px;
+        }
+
+        .brand-header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .brand-header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Tabs */
+        .auth-tabs {
+            display: flex;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            padding: 4px;
+            margin-bottom: 28px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 100px;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: var(--text-primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Form Controls */
+        .form-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.6);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            border-color: var(--neon-cyan);
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 198, 251, 0.1);
+        }
+
+        /* Helper Disclaimer Note */
+        .disclaimer-note {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+            background: rgba(0, 198, 251, 0.06);
+            border: 1px dashed rgba(0, 198, 251, 0.25);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 4px;
+        }
+
+        /* Buttons */
+        .auth-submit-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 100px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.98rem;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            outline: none;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.8) 0%, rgba(0, 198, 251, 0.8) 100%);
+            box-shadow: 
+                0 8px 20px rgba(255, 0, 127, 0.15),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            transition: var(--transition);
+        }
+
+        .auth-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 12px 24px rgba(255, 0, 127, 0.25),
+                inset 0 3px 6px rgba(255, 255, 255, 0.6);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.9) 0%, rgba(0, 198, 251, 0.9) 100%);
+        }
+
+        /* Message Display */
+        .message-box {
+            display: none;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            line-height: 1.4;
+            animation: messageFadeIn 0.3s ease-out;
+        }
+
+        @keyframes messageFadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-box.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #b91c1c;
+        }
+
+        .message-box.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #047857;
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Sign In & Join Member Club | Nano Neons">
+    <meta property="og:description" content="Sign in or register an account at Nano Neons to save your visual customizer designs and activate your first-time member 15% order discount.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/login.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sign In & Join Member Club | Nano Neons">
+    <meta name="twitter:description" content="Sign in or register an account at Nano Neons to save your visual customizer designs and activate your first-time member 15% order discount.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Back Arrow -->
+        <a href="/" class="back-home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            <span>Back to Home</span>
+        </a>
+
+        <!-- Header -->
+        <div class="brand-header">
+            <img src="logo.webp" alt="Nano Neons" class="brand-logo">
+            <h1 id="auth-title">Welcome Back</h1>
+            <p id="auth-subtitle">Sign in to save your designs & unlock your discount.</p>
+        </div>
+
+        <!-- Switch Tabs -->
+        <div class="auth-tabs">
+            <button class="tab-btn active" id="tab-login">Log In</button>
+            <button class="tab-btn" id="tab-register">Sign Up</button>
+        </div>
+
+        <!-- Notifications -->
+        <div class="message-box" id="message-display"></div>
+        <div style="height: 16px;"></div>
+
+        <!-- Form -->
+        <form class="form-form" id="auth-form">
+            <!-- Name (Only visible for Sign Up) -->
+            <div class="form-group" id="group-name" style="display: none;">
+                <label for="input-name">Full Name</label>
+                <input type="text" id="input-name" class="form-input" placeholder="e.g. John Doe">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="input-email">Email Address</label>
+                <input type="email" id="input-email" class="form-input" required placeholder="name@domain.com">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="input-password">Password</label>
+                <div class="password-wrapper" style="position: relative; display: flex; align-items: center; width: 100%;">
+                    <input type="password" id="input-password" class="form-input" required placeholder="••••••••" minlength="6" style="padding-right: 48px;">
+                    <button type="button" id="toggle-password" style="position: absolute; right: 12px; background: none; border: none; outline: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; padding: 4px; transition: var(--transition);">
+                        <svg id="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Email registration match disclaimer -->
+            <div class="disclaimer-note" id="disclaimer-note" style="display: none;">
+                💡 <strong>Important Note:</strong> To automatically receive your 15% discount at checkout, please sign up and place your order using the exact same email address.
+            </div>
+
+            <div style="height: 8px;"></div>
+
+            <button type="submit" class="auth-submit-btn" id="btn-submit">Log In</button>
+        </form>
+    </div>
+
+    <!-- Initialize Client Config and Auths -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    
+    <script>
+        const tabLogin = document.getElementById('tab-login');
+        const tabRegister = document.getElementById('tab-register');
+        const authTitle = document.getElementById('auth-title');
+        const authSubtitle = document.getElementById('auth-subtitle');
+        const groupName = document.getElementById('group-name');
+        const disclaimerNote = document.getElementById('disclaimer-note');
+        const btnSubmit = document.getElementById('btn-submit');
+        const authForm = document.getElementById('auth-form');
+        const messageDisplay = document.getElementById('message-display');
+        
+        const inputName = document.getElementById('input-name');
+        const inputEmail = document.getElementById('input-email');
+        const inputPassword = document.getElementById('input-password');
+
+        let isLoginMode = true;
+
+        // Parse URL Parameters (pre-fill email, toggle register mode)
+        const urlParams = new URLSearchParams(window.location.search);
+        const emailParam = urlParams.get('email');
+        const signupParam = urlParams.get('signup');
+
+        if (emailParam) {
+            inputEmail.value = decodeURIComponent(emailParam);
+        }
+        if (signupParam === 'true') {
+            isLoginMode = false;
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+            authTitle.textContent = 'Join Member Club';
+            authSubtitle.textContent = 'Save your customizer designs & get 15% off.';
+            groupName.style.display = 'flex';
+            disclaimerNote.style.display = 'block';
+            inputName.setAttribute('required', 'true');
+            btnSubmit.textContent = 'Create Account';
+        }
+
+        // Switch to Login Tab
+        tabLogin.addEventListener('click', () => {
+            if (isLoginMode) return;
+            isLoginMode = true;
+            tabLogin.classList.add('active');
+            tabRegister.classList.remove('active');
+            authTitle.textContent = 'Welcome Back';
+            authSubtitle.textContent = 'Sign in to save your designs & unlock your discount.';
+            groupName.style.display = 'none';
+            disclaimerNote.style.display = 'none';
+            inputName.removeAttribute('required');
+            btnSubmit.textContent = 'Log In';
+            hideMessage();
+        });
+
+        // Switch to Register Tab
+        tabRegister.addEventListener('click', () => {
+            if (!isLoginMode) return;
+            isLoginMode = false;
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+            authTitle.textContent = 'Join Member Club';
+            authSubtitle.textContent = 'Save your customizer designs & get 15% off.';
+            groupName.style.display = 'flex';
+            disclaimerNote.style.display = 'block';
+            inputName.setAttribute('required', 'true');
+            btnSubmit.textContent = 'Create Account';
+            hideMessage();
+        });
+
+        // Form Submit Handler
+        authForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideMessage();
+            
+            // Wait for Supabase to be initialized
+            const supabase = await window.supabaseInitPromise;
+            if (!supabase) {
+                const errMsg = window.supabaseInitError 
+                    ? `Database is not initialized. Error details: ${window.supabaseInitError}`
+                    : 'Database is not initialized. Please try again later.';
+                showMessage(errMsg, 'error');
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = isLoginMode ? 'Signing In...' : 'Registering Account...';
+
+            const email = inputEmail.value.trim();
+            const password = inputPassword.value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address (e.g., name@example.com).', 'error');
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = isLoginMode ? 'Log In' : 'Create Account';
+                inputEmail.focus();
+                return;
+            }
+
+            try {
+                if (isLoginMode) {
+                    // Sign In Logic
+                    const { data, error } = await supabase.auth.signInWithPassword({
+                        email,
+                        password
+                    });
+
+                    if (error) throw error;
+                    
+                    showMessage('Login successful! Redirecting...', 'success');
+                    handleSuccessfulAuth();
+                } else {
+                    // Sign Up Logic
+                    const fullName = inputName.value.trim();
+                    const { data, error } = await supabase.auth.signUp({
+                        email,
+                        password,
+                        options: {
+                            data: { full_name: fullName }
+                        }
+                    });
+
+                    if (error) throw error;
+
+                    if (data.session) {
+                        showMessage('Registration successful! Logging you in...', 'success');
+                        setTimeout(() => {
+                            handleSuccessfulAuth();
+                        }, 1000);
+                    } else {
+                        showMessage('Registration successful! Please check your email inbox to confirm your account before logging in.', 'success');
+                        btnSubmit.disabled = false;
+                        btnSubmit.textContent = 'Create Account';
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                showMessage(err.message || 'An error occurred. Please try again.', 'error');
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = isLoginMode ? 'Log In' : 'Create Account';
+            }
+        });
+
+        function showMessage(text, type) {
+            messageDisplay.textContent = text;
+            messageDisplay.className = `message-box ${type}`;
+            messageDisplay.style.display = 'block';
+        }
+
+        function hideMessage() {
+            messageDisplay.style.display = 'none';
+        }
+
+        function handleSuccessfulAuth() {
+            // Determine redirect target
+            const pendingSave = sessionStorage.getItem('pending_save_design');
+            
+            setTimeout(() => {
+                if (pendingSave) {
+                    // Redirect back to customizer to finish saving design
+                    window.location.href = 'customizer.html';
+                } else {
+                    // Redirect to home page
+                    window.location.href = '/';
+                }
+            }, 1000);
+        }
+
+        // Toggle password visibility click handler
+        const togglePassword = document.getElementById('toggle-password');
+        const eyeIcon = document.getElementById('eye-icon');
+
+        togglePassword.addEventListener('click', () => {
+            const isPassword = inputPassword.getAttribute('type') === 'password';
+            inputPassword.setAttribute('type', isPassword ? 'text' : 'password');
+            
+            if (isPassword) {
+                // Change to Eye Off SVG
+                eyeIcon.innerHTML = `
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                `;
+                togglePassword.style.color = 'var(--neon-pink)';
+            } else {
+                // Change to Eye On SVG
+                eyeIcon.innerHTML = `
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                `;
+                togglePassword.style.color = 'var(--text-muted)';
+            }
+        });
+    </script>
+</body>
+</html>

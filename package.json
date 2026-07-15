@@ -1,0 +1,19 @@
+{
+  "name": "neon-sign-creator",
+  "version": "1.0.0",
+  "description": "Local Custom LED Neon Sign Creator served over local Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "nodemailer": "^8.0.8",
+    "resend": "^6.12.3",
+    "sharp": "^0.34.5",
+    "stripe": "^22.1.1"
+  }
+}

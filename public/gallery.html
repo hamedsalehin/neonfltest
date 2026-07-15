@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Sign Gallery & Showcase | Nano Neons</title>
+    <meta name="description" content="Explore our luxury gallery of custom handcrafted LED neon signs. Get inspiration for your business logo, home decor, weddings, and events.">
+    <link rel="canonical" href="https://neonfl.com/gallery">
+    
+    <!-- Google Fonts Outfit & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+        <link rel="preload" href="landing.css?v=7" as="style">
+    <link rel="stylesheet" href="landing.css?v=7">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        /* ─── GALLERY HERO SECTION ────────────────────────────────────────── */
+        .gallery-hero {
+            padding: 140px 0 60px;
+            background: #ffffff;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-hero .section-tag {
+            background: rgba(255, 0, 127, 0.06);
+            color: var(--neon-pink);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 2px rgba(255, 0, 127, 0.05);
+        }
+
+        .gallery-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.4rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .gallery-hero p {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.15rem;
+            color: #4b5563;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ─── INTERACTIVE FILTER CONTROLS ───────────────────────────────────── */
+        .filter-controls-area {
+            background: #ffffff;
+            padding: 20px 0 40px;
+            position: sticky;
+            top: 79px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .filter-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            color: #475569;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .filter-btn:hover {
+            background: #f1f5f9;
+            color: #1e1b4b;
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active {
+            background: #1e1b4b;
+            color: #ffffff;
+            border-color: #1e1b4b;
+            box-shadow: 0 4px 14px rgba(30, 27, 75, 0.2);
+        }
+
+        /* ─── LUXURY PHOTO GRID ────────────────────────────────────────────── */
+        .gallery-grid-section {
+            padding: 20px 0 100px;
+            background: #ffffff;
+            min-height: 500px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-card.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.07);
+            border-color: rgba(255, 0, 127, 0.15);
+        }
+
+        .gallery-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #09090b;
+        }
+
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover .gallery-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .gallery-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 27, 75, 0.4);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-hover-overlay {
+            opacity: 1;
+        }
+
+        .zoom-icon-wrapper {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--neon-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover .zoom-icon-wrapper {
+            transform: scale(1);
+        }
+
+        .gallery-card-info {
+            padding: 20px 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.03);
+            background: #ffffff;
+        }
+
+        .gallery-card-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--neon-pink);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .gallery-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e1b4b;
+            line-height: 1.3;
+        }
+
+        /* ─── LUXURY LIGHTBOX MODAL ────────────────────────────────────────── */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 18, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1010;
+        }
+
+        .lightbox-close-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.05);
+        }
+
+        .lightbox-content-wrapper {
+            position: relative;
+            max-width: 90vw;
+            max-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-modal.active .lightbox-img {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1010;
+            user-select: none;
+        }
+
+        .lightbox-arrow:hover {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-arrow.prev {
+            left: -80px;
+        }
+
+        .lightbox-arrow.next {
+            right: -80px;
+        }
+
+        @media (max-width: 992px) {
+            .lightbox-arrow.prev {
+                left: 16px;
+            }
+            .lightbox-arrow.next {
+                right: 16px;
+            }
+        }
+
+        .lightbox-caption-area {
+            text-align: center;
+            margin-top: 24px;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .lightbox-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .lightbox-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--neon-pink);
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .lightbox-cta-btn {
+            background: linear-gradient(135deg, var(--neon-pink), #ff007f);
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 100px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .lightbox-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-hero h1 {
+                font-size: 2.4rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Neon Sign Gallery & Showcase | Nano Neons">
+    <meta property="og:description" content="Explore our luxury gallery of custom handcrafted LED neon signs. Get inspiration for your business logo, home decor, weddings, and events.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/gallery">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neon Sign Gallery & Showcase | Nano Neons">
+    <meta name="twitter:description" content="Explore our luxury gallery of custom handcrafted LED neon signs. Get inspiration for your business logo, home decor, weddings, and events.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+
+    <!-- ─── HEADER / NAVIGATION ────────────────────────────────────────────── -->
+    <header class="site-header" id="site-header">
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <img src="logo.webp" alt="Nano Neons" width="160" height="56" fetchpriority="high">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/#hero">Home</a></li>
+                    <li><a href="customizer.html">Customizer <span style="background: var(--neon-pink); color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; font-weight: 700; vertical-align: middle; margin-left: 2px;">NEW</span></a></li>
+                    <li><a href="/#shop">Shop</a></li>
+                    <li><a href="gallery" class="active">Gallery</a></li>
+                    <li><a href="/#colors">Colors</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li id="auth-nav-item"><a href="login.html" class="auth-login-link" style="text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; transition: var(--transition); border: 1px solid rgba(0,0,0,0.15); padding: 8px 16px; border-radius: 100px; background: rgba(255,255,255,0.5);">Sign In</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="quote.html" class="glow-btn outline" style="padding: 10px 24px; font-size: 0.9rem; border-color: rgba(255,255,255,0.25);">
+                    Upload Logo / Get Quote
+                </a>
+                <a href="customizer.html" class="glow-btn cyan-glow" style="padding: 10px 24px; font-size: 0.9rem;">
+                    Customize Your Own Sign
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ─── HERO SECTION ───────────────────────────────────────────────────── -->
+    <section class="gallery-hero">
+        <div class="container">
+            <span class="section-tag">Client Showcase</span>
+            <h1>Creations In the Wild</h1>
+            <p>A curated collection of our custom handcrafted LED neon signs lighting up businesses, luxury home decors, weddings, and premium workspaces worldwide.</p>
+        </div>
+    </section>
+
+    <!-- ─── INTERACTIVE FILTER CONTROLS ───────────────────────────────────── -->
+    <div class="filter-controls-area">
+        <div class="container">
+            <div class="filter-btn-container">
+                <button class="filter-btn active" data-filter="all">All Creations</button>
+                <button class="filter-btn" data-filter="business">Business & Logos</button>
+                <button class="filter-btn" data-filter="home">Home & Decor</button>
+                <button class="filter-btn" data-filter="event">Weddings & Events</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── GALLERY GRID SECTION ──────────────────────────────────────────── -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Cards will be populated dynamically by JS to keep rendering clean and fast -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── LUXURY LIGHTBOX MODAL ────────────────────────────────────────── -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        
+        <button class="lightbox-arrow prev" id="lightbox-prev" aria-label="Previous Image">&#10094;</button>
+        <div class="lightbox-content-wrapper">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        </div>
+        <button class="lightbox-arrow next" id="lightbox-next" aria-label="Next Image">&#10095;</button>
+        
+        <div class="lightbox-caption-area">
+            <span class="lightbox-tag" id="lightbox-tag">Tag</span>
+            <h3 class="lightbox-title" id="lightbox-title">Title</h3>
+            <a href="quote.html" class="lightbox-cta-btn" id="lightbox-cta">Request a Quote Like This</a>
+        </div>
+    </div>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+                </a>
+                <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="customizer.html">Custom Text Signs</a></li>
+                    <li><a href="/#shop">Ready-Made Designs</a></li>
+                    <li><a href="programmable-led-sign">Programmable LED Sign</a></li>
+                    <li><a href="channel-letters">LED Channel Letters</a></li>
+                    <li><a href="storefront-signs">Storefront LED Sign</a></li>
+                    <li><a href="backlit-sign">Backlit LED Sign</a></li>
+                    <li><a href="quote.html">UV Printed Logos / Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/#shop">Shop Popular Neons</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Color Panel</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><a href="#" class="obfuscated-email" data-user="nanosign1" data-domain="gmail.com"></a></li>
+                    <li><a href="tel:+13059671005" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 1005</a></li>
+                    <li><a href="tel:+13059679654" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 9654</a></li>
+                    <li><p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;"><a href="https://maps.google.com/?q=Nano+signs+Oakland+Park+FL" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">4567 Powerline Rd,<br>Oakland Park, FL 33309</a></p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Nano Sign. All rights reserved. Handcrafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- ─── DYNAMIC GALLERY CONFIGURATION & INTERACTIVITY ─────────────────── -->
+    <script>
+        const galleryData = [
+            {
+                id: 0,
+                src: 'images/gallery/work1.webp',
+                title: 'Hustle Harder Office Neon',
+                tag: 'Business & Logos',
+                category: 'business'
+            },
+            {
+                id: 1,
+                src: 'images/gallery/work2.webp',
+                title: 'Pink Wings Portrait Backdrop',
+                tag: 'Home & Decor',
+                category: 'home'
+            },
+            {
+                id: 2,
+                src: 'images/gallery/work3.webp',
+                title: 'Game Zone Bedroom Glow',
+                tag: 'Home & Decor',
+                category: 'home'
+            },
+            {
+                id: 3,
+                src: 'images/gallery/work4.webp',
+                title: 'Diner Cocktails Outdoor Sign',
+                tag: 'Business & Logos',
+                category: 'business'
+            },
+            {
+                id: 4,
+                src: 'images/gallery/work5.webp',
+                title: 'Elegant Wedding Ceremony Script',
+                tag: 'Weddings & Events',
+                category: 'event'
+            },
+            {
+                id: 5,
+                src: 'images/gallery/work6.webp',
+                title: 'Bar & Lounge Retro Neon Sign',
+                tag: 'Business & Logos',
+                category: 'business'
+            },
+            {
+                id: 6,
+                src: 'images/gallery/work7.webp',
+                title: 'Stay Wild Botanical Backlighting',
+                tag: 'Home & Decor',
+                category: 'home'
+            },
+            {
+                id: 7,
+                src: 'images/gallery/work8.webp',
+                title: 'Premium Corporate Lobby Logo',
+                tag: 'Business & Logos',
+                category: 'business'
+            },
+            {
+                id: 8,
+                src: 'images/gallery/work9.webp',
+                title: 'Man Cave Script Sign',
+                tag: 'Home & Decor',
+                category: 'home'
+            },
+            {
+                id: 9,
+                src: 'images/gallery/work10.webp',
+                title: 'Mr & Mrs Rose Wall Setup',
+                tag: 'Weddings & Events',
+                category: 'event'
+            },
+            {
+                id: 10,
+                src: 'images/gallery/work11.webp',
+                title: 'Love in the Air Birthday Sign',
+                tag: 'Weddings & Events',
+                category: 'event'
+            },
+            {
+                id: 11,
+                src: 'images/gallery/WhatsApp Image 2026-05-31 at 4.21.37 PM.jpeg',
+                title: 'Luxury Retail Facade Sign',
+                tag: 'Business & Logos',
+                category: 'business'
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('gallery-grid');
+            
+            // 1. Render Gallery Cards
+            galleryData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `gallery-card`;
+                card.dataset.category = item.category;
+                card.dataset.id = item.id;
+                
+                card.innerHTML = `
+                    <div class="gallery-img-wrapper">
+                        <img src="${item.src}" alt="${item.title}" loading="lazy">
+                        <div class="gallery-hover-overlay">
+                            <div class="zoom-icon-wrapper">🔍</div>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="gallery-card-tag">${item.tag}</span>
+                        <h3 class="gallery-card-title">${item.title}</h3>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            // 2. Filter Functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.gallery-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Toggle active button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.dataset.filter;
+
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.dataset.category === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // 3. Lightbox Interactivity
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxTag = document.getElementById('lightbox-tag');
+            const closeBtn = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+            const ctaBtn = document.getElementById('lightbox-cta');
+            
+            let currentIdx = 0;
+            let activeFilterData = [...galleryData];
+
+            const openLightbox = (id) => {
+                // Find index based on active filter list
+                const activeBtn = document.querySelector('.filter-btn.active');
+                const filter = activeBtn ? activeBtn.dataset.filter : 'all';
+                
+                activeFilterData = galleryData.filter(item => filter === 'all' || item.category === filter);
+                currentIdx = activeFilterData.findIndex(item => item.id === parseInt(id));
+
+                if (currentIdx > -1) {
+                    updateLightboxContent();
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Lock background scrolling
+                }
+            };
+
+            const updateLightboxContent = () => {
+                const item = activeFilterData[currentIdx];
+                if (!item) return;
+                
+                lightboxImg.style.opacity = '0';
+                setTimeout(() => {
+                    lightboxImg.src = item.src;
+                    lightboxImg.alt = item.title;
+                    lightboxTitle.textContent = item.title;
+                    lightboxTag.textContent = item.tag;
+                    ctaBtn.href = `quote.html?ref_sign=${encodeURIComponent(item.title)}`;
+                    lightboxImg.style.opacity = '1';
+                }, 150);
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Unlock scrolling
+            };
+
+            // Attach clicks on cards to open lightbox
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    openLightbox(card.dataset.id);
+                });
+            });
+
+            // Event Listeners for Navigating Lightbox
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIdx = (currentIdx - 1 + activeFilterData.length) % activeFilterData.length;
+                updateLightboxContent();
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIdx = (currentIdx + 1) % activeFilterData.length;
+                updateLightboxContent();
+            });
+
+            // Close on clicking backdrop
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === document.querySelector('.lightbox-content-wrapper')) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'ArrowRight') nextBtn.click();
+            });
+
+            // 4. Mobile Navigation Menu Toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    <!-- Email Obfuscation Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+          const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+          if (el.tagName === 'A') {
+            el.setAttribute('href', 'mailto:' + email);
+            if (!el.textContent.trim()) {
+              el.textContent = email;
+            }
+          } else {
+            el.textContent = email;
+          }
+        });
+      });
+    </script>
+</body>
+</html>

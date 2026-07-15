@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) for Production -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+        document.head.appendChild(gaScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://neonfl.com/programmable-led-sign">
+    <title>Programmable LED Sign</title>
+    <!-- Description for SEO -->
+    <meta name="description" content="Shop premium programmable LED signs for storefronts. High-brightness scrolling text, WiFi control, and energy efficient. Order custom commercial displays.">
+    <!-- Google Fonts Outfit & Space Grotesk -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="landing.css?v=7" as="style">
+    <link rel="stylesheet" href="landing.css?v=7">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            background-color: var(--bg-light, #f8fafc);
+            color: #1e1b4b;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header-spacer {
+            height: 90px;
+        }
+
+        .product-page-container {
+            padding: 60px 0 80px;
+        }
+
+        .product-main-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 992px) {
+            .product-main-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .product-image-container {
+            background: #09090b;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-panel {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(31, 38, 135, 0.03);
+            border: 1px solid rgba(200, 200, 220, 0.4);
+        }
+
+        @media (max-width: 576px) {
+            .product-info-panel {
+                padding: 25px;
+            }
+        }
+
+        .product-info-panel h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e1b4b;
+        }
+
+        .product-category-tag {
+            color: var(--neon-pink);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .product-price-large {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin: 15px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-price-large span {
+            font-size: 1rem;
+            color: #64748b;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .product-specs-list {
+            margin: 25px 0;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 20px 0;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .spec-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .spec-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: #1e1b4b;
+            font-weight: 600;
+        }
+
+        .product-intro-text {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #475569;
+            margin-bottom: 25px;
+        }
+
+        .seo-article-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(31,38,135,0.02);
+            border: 1px solid rgba(200, 200, 220, 0.3);
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .seo-article-section {
+                padding: 30px;
+            }
+        }
+
+        .seo-article-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: #1e1b4b;
+        }
+
+        .seo-article-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .seo-article-section p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .seo-article-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .seo-article-section li {
+            margin-bottom: 8px;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+    </style>
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="Programmable LED Sign | Custom Scrolling Text Storefront Signs | Nano Sign">
+    <meta property="og:description" content="Shop premium programmable LED signs for storefronts. High-brightness scrolling text, WiFi control, and energy efficient. Order custom commercial displays.">
+    <meta property="og:image" content="https://neonfl.com/logo-white.webp">
+    <meta property="og:url" content="https://neonfl.com/programmable-led-sign">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter/X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Programmable LED Sign | Custom Scrolling Text Storefront Signs | Nano Sign">
+    <meta name="twitter:description" content="Shop premium programmable LED signs for storefronts. High-brightness scrolling text, WiFi control, and energy efficient. Order custom commercial displays.">
+    <meta name="twitter:image" content="https://neonfl.com/logo-white.webp">
+</head>
+<body>
+
+    <!-- ─── HEADER / NAVIGATION ────────────────────────────────────────────── -->
+    <header class="site-header site-header-scrolled" id="site-header" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px);">
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/#hero">Home</a></li>
+                    <li><a href="customizer.html">Customizer</a></li>
+                    <li><a href="/#shop">Shop</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Colors</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li id="auth-nav-item"><a href="login.html" class="auth-login-link" style="text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; transition: var(--transition); border: 1px solid rgba(0,0,0,0.15); padding: 8px 16px; border-radius: 100px; background: rgba(255,255,255,0.5);">Sign In</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="quote.html" class="glow-btn outline" style="padding: 10px 24px; font-size: 0.9rem; border-color: rgba(0,0,0,0.1);">
+                    Upload Logo / Get Quote
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <div class="product-page-container">
+        <div class="container">
+            
+            <!-- MAIN PRODUCT DETAILS SECTION -->
+            <div class="product-main-grid">
+                <div class="product-image-container">
+                    <img src="images/shop/programmable_led.webp" alt="Programmable LED Scrolling Storefront Sign">
+                </div>
+                
+                <div class="product-info-panel">
+                    <span class="product-category-tag">Commercial & Retail Signs</span>
+                    <h1>Programmable LED Sign</h1>
+                    
+                    <div class="product-price-large">
+                        $298.00 <span>$399.00</span>
+                    </div>
+                    
+                    <p class="product-intro-text">
+                        Maximize your foot traffic and visibility with our high-brightness programmable scrolling LED storefront sign. Instantly update custom text messages, promotional discounts, and hours of operation over local Wi-Fi from your smartphone or desktop computer.
+                    </p>
+                    
+                    <button class="glow-btn pink-glow" id="buy-now-btn" style="width: 100%; text-align: center; justify-content: center; font-size: 1.1rem; padding: 14px 0;">
+                        Buy Now / Add to Cart
+                    </button>
+                    
+                    <div class="product-specs-list">
+                        <div class="spec-row">
+                            <span class="spec-label">Dimensions</span>
+                            <span class="spec-value">28.34" x 15.74" (72 x 40 cm)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Color Profile</span>
+                            <span class="spec-value">RGB Full Color Multicolor</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Programming Type</span>
+                            <span class="spec-value">Wi-Fi Connection / App Control</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Pixel Pitch</span>
+                            <span class="spec-value">P10 High Contrast</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Power Supply</span>
+                            <span class="spec-value">Mean Well 5V DC (110V/220V Input)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO DETAILED ARTICLE SECTION -->
+            <div class="seo-article-section">
+                <h2>How Do Programmable LED Signs Work?</h2>
+                <p>
+                    Programmable LED signs (also referred to as electronic digital message centers or scrolling LED displays) operate using a matrix network of individual light-emitting diodes (LEDs) arranged on surface-mount panels. The spacing between each LED is called the <strong>pixel pitch</strong>. Our sign utilizes a P10 pixel pitch, meaning the distance from the center of one LED to the center of the next is exactly 10 millimeters, which is the industry standard for high-readability storefront window displays visible from passing cars.
+                </p>
+                <p>
+                    At the heart of the sign is an asynchronous microcontroller processor board with onboard flash memory. When you send new text messages or graphics using your smartphone app, the data travels securely via Wi-Fi to this receiver card. The microprocessor translates the text string into digital coordinate maps and coordinates the electrical scan lines (using high-speed row multiplexer chips). By strobing the individual red, green, and blue (RGB) sub-pixels at refresh rates exceeding 1920Hz, the sign displays smooth transitions, moving borders, and glowing text without displaying any visual scan line artifacts on smartphone cameras or video.
+                </p>
+
+                <h2>Why Choose a Programmable LED Sign for Your Storefront?</h2>
+                <p>
+                    For commercial business storefronts in Florida (from Miami to Jacksonville), static posters cannot compete with active dynamic lighting. Programmable LED displays offer distinct marketing and operational benefits:
+                </p>
+                <ul>
+                    <li><strong>Real-Time Message Control:</strong> Promote limited-time deals, update store operating hours, advertise job openings, or display safety messages instantly without paying for new print banners.</li>
+                    <li><strong>Maximum Visibility:</strong> Utilizing premium SMD 3535 LED clusters, these signs deliver up to 5,500 nits of brightness. This allows your messaging to remain perfectly legible under direct Florida sun glare.</li>
+                    <li><strong>High Contrast & Readability:</strong> The matte black sign face contrast board absorbs natural light, ensuring that your neon text pops sharply from over 300 feet away.</li>
+                    <li><strong>Eco-Friendly Energy Savings:</strong> Engineered to run on standard low-voltage 5V DC circuits, our scrolling displays consume 70% less electricity than legacy neon glass signs, saving money on utility bills.</li>
+                </ul>
+
+                <h2>Best Placement and Operational Practices</h2>
+                <p>
+                    To achieve the highest rate of customer conversion, we recommend mounting your programmable LED sign directly behind your main storefront display window using the included hanging chain kit. This protects the casing from outdoor wind loads while keeping it positioned at eye level for pedestrians.
+                </p>
+                <p>
+                    When setting up your text sequences in the mobile software, keep your copy concise. Phrases like "OPEN - BUY ONE GET ONE FREE" or "STOREWIDE SALE TODAY" scroll best. Pair clean, heavy block fonts with slow-scrolling speed variables. Fast-flashing text can cause visual fatigue for drivers, whereas a steady, rhythmic crawl draws positive attention. Always adjust the brightness setting in your control application to 100% during high-glare sunny hours, and scale it down to 30% at night to prevent blinding passing traffic.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── OTHER PRODUCTS CAROUSEL ─────────────────────────────────────────── -->
+    <section class="related-products-section">
+        <div class="container">
+            <h3>You Might Also Like</h3>
+            <div class="carousel-wrapper-relative">
+                <button class="carousel-arrow prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                <div class="horizontal-scroll-container">
+                    <a class="related-product-card" href="channel-letters" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/channel_letters.webp" alt="LED Channel Letters Sign Face-Lit" loading="lazy">
+                        <h4 class="related-product-title">LED Channel Letters</h4>
+                        <span class="related-product-price">$499.00</span>
+                    </a>
+                    <a class="related-product-card" href="storefront-signs" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/storefront_sign.webp" alt="Storefront LED Sign Cabinet Lightbox" loading="lazy">
+                        <h4 class="related-product-title">Storefront LED Sign</h4>
+                        <span class="related-product-price">$399.00</span>
+                    </a>
+                    <a class="related-product-card" href="backlit-sign" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/backlit_sign.webp" alt="Backlit LED Circular Sign Halo Effect" loading="lazy">
+                        <h4 class="related-product-title">Backlit LED Sign</h4>
+                        <span class="related-product-price">$349.00</span>
+                    </a>
+                    <a class="related-product-card" href="/#shop" style="text-decoration: none;">
+                        <img class="related-product-img" src="images/shop/good_vibes_neon.webp" alt="Good Vibes Only Neon Sign" loading="lazy">
+                        <h4 class="related-product-title">Good Vibes Only</h4>
+                        <span class="related-product-price">$169.00</span>
+                    </a>
+                </div>
+                <button class="carousel-arrow next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.webp" alt="Nano Neons" style="height: 58px;">
+                </a>
+                <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="customizer.html">Custom Text Signs</a></li>
+                    <li><a href="/#shop">Ready-Made Designs</a></li>
+                    <li><a href="programmable-led-sign">Programmable LED Sign</a></li>
+                    <li><a href="channel-letters">LED Channel Letters</a></li>
+                    <li><a href="storefront-signs">Storefront LED Sign</a></li>
+                    <li><a href="backlit-sign">Backlit LED Sign</a></li>
+                    <li><a href="quote.html">UV Printed Logos / Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/#shop">Shop Popular Neons</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Color Panel</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><a href="#" class="obfuscated-email" data-user="nanosign1" data-domain="gmail.com"></a></li>
+                    <li><a href="tel:+13059671005" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 1005</a></li>
+                    <li><a href="tel:+13059679654" style="font-size: 1.05rem; font-weight: 600; display: inline-block; margin-top: 5px;">+1 305 967 9654</a></li>
+                    <li><p style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;"><a href="https://maps.google.com/?q=Nano+signs+Oakland+Park+FL" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">4567 Powerline Rd,<br>Oakland Park, FL 33309</a></p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Nano Sign. All rights reserved. Handcrafted with love.</p>
+        </div>
+    </footer>
+
+    <!-- Buy Button Logic -->
+    <script>
+        function scrollCarousel(button, direction) {
+            const container = button.parentElement.querySelector('.horizontal-scroll-container');
+            if (container) {
+                const card = container.querySelector('.related-product-card');
+                const scrollAmount = card ? card.offsetWidth + 24 : 304;
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buyBtn = document.getElementById('buy-now-btn');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', () => {
+                    let cart = JSON.parse(localStorage.getItem('neon_cart')) || [];
+                    
+                    const cartItem = {
+                        text: 'Programmable LED Sign',
+                        fontName: 'Commercial LED',
+                        colorName: 'RGB Multicolor',
+                        widthIn: 28.34,
+                        heightIn: 15.74,
+                        widthCm: 72,
+                        heightCm: 40,
+                        backing: 'cut-to-shape',
+                        backingColor: 'acrylic',
+                        environment: 'indoor',
+                        price: 299.00,
+                        svgMarkup: `<img src="images/shop/programmable_led.webp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`,
+                        timestamp: Date.now(),
+                        quantity: 1
+                    };
+
+                    const isSameCartItem = (a, b) => {
+                        return a.text === b.text &&
+                               a.fontName === b.fontName &&
+                               a.colorName === b.colorName &&
+                               a.widthCm === b.widthCm &&
+                               a.heightCm === b.heightCm &&
+                               a.backing === b.backing &&
+                               a.backingColor === b.backingColor &&
+                               a.environment === b.environment;
+                    };
+
+                    const existingIndex = cart.findIndex(item => isSameCartItem(item, cartItem));
+                    if (existingIndex > -1) {
+                        cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+                    } else {
+                        cart.push(cartItem);
+                    }
+
+                    localStorage.setItem('neon_cart', JSON.stringify(cart));
+                    window.location.href = 'cart.html';
+                });
+            }
+
+            // Mobile Nav Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="auth.js?v=8" defer></script>
+    <!-- Email Obfuscation Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+          const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+          if (el.tagName === 'A') {
+            el.setAttribute('href', 'mailto:' + email);
+            if (!el.textContent.trim()) {
+              el.textContent = email;
+            }
+          } else {
+            el.textContent = email;
+          }
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Redirect www to non-www (dynamic for staging and production)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ %{REQUEST_SCHEME}://%1/$1 [R=301,L]
+
+    # 2. Redirect index.html to root /
+    RewriteCond %{REQUEST_URI} ^/index\.html$ [NC]
+    RewriteRule ^(index\.html)?$ %{REQUEST_SCHEME}://%{HTTP_HOST}/ [R=301,L]
+
+    # 3. Redirect /public/index.html to /
+    RewriteCond %{REQUEST_URI} ^/public/index\.html$ [NC]
+    RewriteRule ^public/index\.html$ %{REQUEST_SCHEME}://%{HTTP_HOST}/ [R=301,L]
+</IfModule>
