@@ -1016,38 +1016,38 @@
                 });
             });
 
-            const sec1 = document.getElementById('section-step-1');
-            const sec2 = document.getElementById('section-step-2');
-            const sec3 = document.getElementById('section-step-3');
-
+            // Non-blocking IntersectionObserver for Step Progress Bar (0ms layout reflow)
             const pStep1 = document.getElementById('prog-step-1');
             const pStep2 = document.getElementById('prog-step-2');
             const pStep3 = document.getElementById('prog-step-3');
             const pBarFill = document.getElementById('progress-bar-fill');
 
-            function updateProgressBar() {
-                const scrollPos = window.scrollY + 240;
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'section-step-3') {
+                            pStep1.className = 'progress-step-item completed';
+                            pStep2.className = 'progress-step-item completed';
+                            pStep3.className = 'progress-step-item active';
+                            pBarFill.style.width = '100%';
+                        } else if (entry.target.id === 'section-step-2') {
+                            pStep1.className = 'progress-step-item completed';
+                            pStep2.className = 'progress-step-item active';
+                            pStep3.className = 'progress-step-item';
+                            pBarFill.style.width = '66.66%';
+                        } else if (entry.target.id === 'section-step-1') {
+                            pStep1.className = 'progress-step-item active';
+                            pStep2.className = 'progress-step-item';
+                            pStep3.className = 'progress-step-item';
+                            pBarFill.style.width = '33.33%';
+                        }
+                    }
+                });
+            }, { rootMargin: '-10% 0px -40% 0px', threshold: 0.2 });
 
-                if (scrollPos >= sec3.offsetTop) {
-                    pStep1.className = 'progress-step-item completed';
-                    pStep2.className = 'progress-step-item completed';
-                    pStep3.className = 'progress-step-item active';
-                    pBarFill.style.width = '100%';
-                } else if (scrollPos >= sec2.offsetTop) {
-                    pStep1.className = 'progress-step-item completed';
-                    pStep2.className = 'progress-step-item active';
-                    pStep3.className = 'progress-step-item';
-                    pBarFill.style.width = '66.66%';
-                } else {
-                    pStep1.className = 'progress-step-item active';
-                    pStep2.className = 'progress-step-item';
-                    pStep3.className = 'progress-step-item';
-                    pBarFill.style.width = '33.33%';
-                }
-            }
-
-            window.addEventListener('scroll', updateProgressBar, { passive: true });
-            updateProgressBar();
+            [document.getElementById('section-step-1'), document.getElementById('section-step-2'), document.getElementById('section-step-3')].forEach(sec => {
+                if (sec) sectionObserver.observe(sec);
+            });
 
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.addEventListener('click', () => {
