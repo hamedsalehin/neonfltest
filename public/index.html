@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) for Production -->
-    <script>
-      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        const gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
-        document.head.appendChild(gaScript);
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BWHV4G49TR');
-      }
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://neonfl.com/">
@@ -1973,6 +1958,34 @@
         }, { rootMargin: '200px' });
         observer.observe(video);
       })();
+    </script>
+
+    <!-- Google Tag Manager / Analytics (Non-blocking idle loader) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+
+        function loadGoogleAnalytics() {
+            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.gaInitialized) {
+                window.gaInitialized = true;
+                const gaScript = document.createElement('script');
+                gaScript.async = true;
+                gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+                document.head.appendChild(gaScript);
+            }
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGoogleAnalytics, { timeout: 2500 });
+        } else {
+            window.addEventListener('load', () => setTimeout(loadGoogleAnalytics, 1000));
+        }
+
+        ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, loadGoogleAnalytics, { once: true, passive: true });
+        });
     </script>
 </body>
 </html>
