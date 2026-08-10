@@ -140,9 +140,9 @@
             box-shadow: 0 8px 22px rgba(255, 0, 127, 0.32);
         }
 
-        /* ─── HERO HEADER SECTION ────────────────────────────────────────────── */
+        /* ─── HERO HEADER SECTION (COMPACT & CLEAN) ─────────────────────────── */
         .quote-hero {
-            padding: 96px 0 20px;
+            padding: 90px 0 14px;
             text-align: center;
         }
 
@@ -150,27 +150,27 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 5px 14px;
+            padding: 4px 14px;
             background: rgba(255, 0, 127, 0.08);
             border: 1px solid rgba(255, 0, 127, 0.25);
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
             color: var(--neon-pink);
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             animation: pulseGlow 2.5s infinite;
         }
 
         .quote-hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.15rem;
             font-weight: 900;
-            line-height: 1.16;
-            letter-spacing: -0.025em;
-            margin-bottom: 10px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
             color: var(--text-primary);
-            max-width: 820px;
+            max-width: 780px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -181,26 +181,18 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .quote-hero p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        /* ─── SOCIAL PROOF LIVE ACTIVITY STRIP ───────────────────────────────── */
+        /* Social Proof Live Activity Indicator */
         .live-activity-strip {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 16px;
+            padding: 5px 14px;
             background: #ffffff;
             border: 1px solid var(--border-light);
             border-radius: 100px;
             box-shadow: var(--shadow-sm);
-            margin-top: 14px;
-            font-size: 0.85rem;
+            margin-top: 4px;
+            font-size: 0.82rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -225,8 +217,8 @@
             grid-template-columns: 1.25fr 0.85fr;
             gap: 32px;
             align-items: start;
-            margin-top: 16px;
-            margin-bottom: 60px;
+            margin-top: 14px;
+            margin-bottom: 50px;
         }
 
         /* ─── LEFT COLUMN: QUOTE FORM CARD ──────────────────────────────────── */
@@ -239,7 +231,7 @@
             position: relative;
         }
 
-        /* ─── 1. STICKY PROGRESS BAR ─────────────────────────────────────────── */
+        /* Sticky Progress Bar */
         .sticky-progress-container {
             position: sticky;
             top: 70px;
@@ -1348,6 +1340,172 @@
             background: rgba(0, 198, 251, 0.06);
         }
 
+        /* ─── SECTION 2: WHY CHOOSE NANO NEONS ───────────────────────────────── */
+        .why-us-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .section-header-center {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        .section-header-center h2 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .section-header-center p {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 18px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 0, 127, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .feature-box h3 {
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .feature-box p {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        /* ─── SECTION 3: RECENT CUSTOM CREATIONS (RESTORED) ───────────────────── */
+        .gallery-preview-section {
+            padding: 55px 0;
+            background: #ffffff;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .recent-card {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #09090b;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .recent-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .recent-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ─── SECTION 4: FAQ ACCORDION ───────────────────────────────────────── */
+        .faq-section {
+            padding: 60px 0 80px;
+        }
+
+        .faq-accordion-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 0, 127, 0.25);
+        }
+
+        .faq-question {
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            user-select: none;
+        }
+
+        .faq-toggle-icon {
+            font-size: 1.15rem;
+            color: var(--neon-pink);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f8fafc;
+        }
+
+        .faq-answer-inner {
+            padding: 0 22px 18px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+        }
+
+        .faq-item.active .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+
         /* ─── 5. EXIT-INTENT MODAL ───────────────────────────────────────────── */
         .exit-modal-overlay {
             position: fixed;
@@ -1510,15 +1668,57 @@
             box-shadow: 0 4px 16px rgba(255, 0, 127, 0.25);
         }
 
-        /* ─── FOOTER ─────────────────────────────────────────────────────────── */
+        /* ─── FULL FOOTER ────────────────────────────────────────────────────── */
         footer.site-footer {
             background: #ffffff;
             border-top: 1px solid var(--border-light);
-            padding: 40px 0 24px;
+            padding: 50px 0 25px;
             margin-top: auto;
         }
 
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 14px;
+            max-width: 320px;
+            line-height: 1.5;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-pink);
+        }
+
         .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 20px;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -1543,14 +1743,19 @@
             .proof-sidebar {
                 position: static;
             }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .recent-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .nav-actions, nav.main-nav { display: none; }
             .nav-wrapper { justify-content: center; height: 62px; }
-            .quote-hero { padding: 85px 0 16px; }
-            .quote-hero h1 { font-size: 1.95rem; }
-            .quote-hero p { font-size: 0.92rem; }
+            .quote-hero { padding: 80px 0 12px; }
+            .quote-hero h1 { font-size: 1.7rem; }
             .form-card { padding: 22px 16px; border-radius: 20px; }
             .sticky-progress-container {
                 margin: -22px -16px 18px -16px;
@@ -1561,12 +1766,21 @@
             .size-chips-grid { grid-template-columns: 1fr; }
             .rush-speed-grid { grid-template-columns: 1fr; }
             .visual-cards-3 { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
             .visual-card-btn {
                 flex-direction: row;
                 justify-content: flex-start;
                 padding: 10px 14px;
                 gap: 10px;
                 text-align: left;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 26px;
+                text-align: center;
+            }
+            .footer-brand p {
+                margin: 12px auto 0;
             }
 
             /* Enable Mobile Tab Switcher on <= 768px */
@@ -1612,16 +1826,15 @@
         </div>
     </header>
 
-    <!-- ─── HERO HEADER SECTION ────────────────────────────────────────────── -->
+    <!-- ─── HERO HEADER SECTION (SHORTER, CLEANER, COMPACT) ────────────────── -->
     <section class="quote-hero">
         <div class="container">
             <div class="badge-pill">
-                <span>⚡ Free 3D Proof & Quote in Under 2 Hours</span>
+                <span>⚡ Free 3D Proof in Under 2 Hours</span>
             </div>
-            <h1>Turn Your Logo or Idea into a <span class="text-gradient">Custom LED Neon Sign</span></h1>
-            <p>Upload your artwork or enter custom sign text. Our Florida neon artisans will craft a photorealistic 3D proof and exact price quote with zero obligation.</p>
+            <h1>Turn Your Logo into a <span class="text-gradient">Custom Neon Sign</span></h1>
 
-            <!-- 4. LIVE ACTIVITY INDICATOR (VARIABLE CONTROLLED IN JS) -->
+            <!-- LIVE ACTIVITY SOCIAL PROOF -->
             <div>
                 <div class="live-activity-strip" id="live-activity-strip">
                     <span class="live-activity-dot"></span>
@@ -1638,7 +1851,7 @@
             <!-- ─── LEFT: INTERACTIVE QUOTE FORM CARD ─────────────────────────── -->
             <div class="form-card">
                 
-                <!-- 1. STICKY PROGRESS BAR -->
+                <!-- STICKY PROGRESS BAR -->
                 <div class="sticky-progress-container" id="sticky-progress">
                     <div class="progress-steps-row">
                         <div class="progress-step-item active" id="prog-step-1">
@@ -1668,7 +1881,7 @@
                             <h2 class="step-title">Upload Your Artwork or Enter Sign Text</h2>
                         </div>
 
-                        <!-- 6. MOBILE TABBED SWITCHER (Active on <= 768px) -->
+                        <!-- MOBILE TAB SWITCHER -->
                         <div class="mobile-tab-switch-row">
                             <button type="button" class="mobile-tab-btn active" id="btn-tab-upload" onclick="switchMobileChoiceTab('upload')">
                                 <span>📤 Upload Design</span>
@@ -1965,14 +2178,14 @@
                             <textarea id="quote-notes" class="form-control" rows="2" placeholder="Tell us about your wall type, needed by date, or color matching..."></textarea>
                         </div>
 
-                        <!-- 2. REPEAT URGENCY BADGE NEAR CTA -->
+                        <!-- REPEAT URGENCY BADGE NEAR CTA -->
                         <div style="text-align: center; margin-top: 18px;">
                             <div class="cta-urgency-badge">
                                 <span>⚡ Free 3D Proof & Quote in Under 2 Hours</span>
                             </div>
                         </div>
 
-                        <!-- 7. CTA BUTTON COPY TEST & 3. TRUST MICROCOPY -->
+                        <!-- CTA BUTTON COPY TEST & TRUST MICROCOPY -->
                         <div class="submit-btn-wrapper">
                             <button type="submit" class="submit-btn" id="submit-quote-btn">
                                 <span>Get My Free 3D Proof →</span>
@@ -2080,6 +2293,139 @@
         </div>
     </main>
 
+    <!-- ─── SECTION 2: WHY CHOOSE NANO NEONS ───────────────────────────────── -->
+    <section class="why-us-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Why Creators & Businesses Choose Nano Neons</h2>
+                <p>We combine modern energy-saving silicone LED technology with precision handcrafted artisan design.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <span class="feature-icon">⚡</span>
+                    <h3>80% Less Energy</h3>
+                    <p>Runs cool on 12V low voltage, using a fraction of traditional glass neon electricity.</p>
+                </div>
+
+                <div class="feature-box">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Shatterproof & Safe</h3>
+                    <p>Made with durable high-grade silicone and acrylic backing — 100% kid and pet safe.</p>
+                </div>
+
+                <div class="feature-box">
+                    <span class="feature-icon">⏱️</span>
+                    <h3>50,000+ Hour Lifespan</h3>
+                    <p>Designed for over 10 years of vibrant, continuous daily illumination without fading.</p>
+                </div>
+
+                <div class="feature-box">
+                    <span class="feature-icon">📦</span>
+                    <h3>Guaranteed Safe Delivery</h3>
+                    <p>Custom foam-padded packaging ensures your sign arrives in flawless working condition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SECTION 3: RECENT CUSTOM CREATIONS (RESTORED GALLERY) ───────────── -->
+    <section class="gallery-preview-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Recent Handcrafted Custom Signs</h2>
+                <p>A few of our favorite custom projects built for weddings, cafes, studios, and businesses.</p>
+            </div>
+
+            <div class="recent-grid">
+                <div class="recent-card">
+                    <img src="images/gallery/work2.webp" alt="Custom LED Neon Sign" width="300" height="300" loading="lazy">
+                </div>
+                <div class="recent-card">
+                    <img src="images/gallery/work4.webp" alt="Custom LED Neon Sign" width="300" height="300" loading="lazy">
+                </div>
+                <div class="recent-card">
+                    <img src="images/gallery/work5.webp" alt="Custom LED Neon Sign" width="300" height="300" loading="lazy">
+                </div>
+                <div class="recent-card">
+                    <img src="images/gallery/work6.webp" alt="Custom LED Neon Sign" width="300" height="300" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SECTION 4: FREQUENTLY ASKED QUESTIONS ───────────────────────────── -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about requesting a free digital design proof & pricing.</p>
+            </div>
+
+            <div class="faq-accordion-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How fast will I receive my digital design proof?</span>
+                        <span class="faq-toggle-icon">➕</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Our Florida-based design team typically sends your photorealistic 3D proof and exact price quote within <strong>2 to 12 hours</strong> directly to your email.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is receiving a digital design proof really 100% free?</span>
+                        <span class="faq-toggle-icon">➕</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Yes, 100% free with zero obligation!</strong> We will design your neon layout, calculate pricing, and send you the digital mockup completely free of charge.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I only have a low-res photo, logo, or rough hand sketch?</span>
+                        <span class="faq-toggle-icon">➕</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No problem at all! You can upload hand drawings, screenshots, low-resolution logos, or vector files. Our graphic designers will vectorize and optimize your artwork into clean neon tubing paths.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I request revisions or changes after seeing the proof?</span>
+                        <span class="faq-toggle-icon">➕</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Absolutely! You can request as many adjustments to colors, dimensions, and styling as you want until you are 100% in love with the layout before ordering.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I hang and power my neon sign?</span>
+                        <span class="faq-toggle-icon">➕</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Every custom sign includes pre-drilled holes in the acrylic backing and stainless steel standoff mounting screws. Simply mount it like a picture frame, plug the included power adapter into any standard wall outlet, and enjoy!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ─── 5. EXIT-INTENT MODAL ───────────────────────────────────────────── -->
     <div class="exit-modal-overlay" id="exit-intent-modal">
         <div class="exit-modal-card">
@@ -2106,8 +2452,39 @@
         </div>
     </div>
 
-    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+    <!-- ─── FULL FOOTER ────────────────────────────────────────────────────── -->
     <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.webp" alt="Nano Neons" width="160" height="56" loading="lazy" style="height: 36px; width: auto;">
+                </a>
+                <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection in South Florida.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="customizer.html">Custom Text Signs</a></li>
+                    <li><a href="/#shop">Ready-Made Designs</a></li>
+                    <li><a href="programmable-led-sign">Programmable LED Sign</a></li>
+                    <li><a href="channel-letters">LED Channel Letters</a></li>
+                    <li><a href="storefront-signs">Storefront LED Sign</a></li>
+                    <li><a href="backlit-sign">Backlit LED Sign</a></li>
+                    <li><a href="quote.html">UV Printed Logos / Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/#shop">Shop Popular Neons</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="/#colors">Color Panel</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="container footer-bottom">
             <p>&copy; 2026 Nano Neons. All rights reserved. Handcrafted with passion in South Florida.</p>
         </div>
@@ -2141,7 +2518,7 @@
             }
         }
 
-        // 6. Mobile Tab Switcher for Option A (Upload) vs Option B (Text)
+        // Mobile Tab Switcher for Option A (Upload) vs Option B (Text)
         function switchMobileChoiceTab(tab) {
             const btnUpload = document.getElementById('btn-tab-upload');
             const btnText = document.getElementById('btn-tab-text');
@@ -2193,7 +2570,7 @@
                 });
             });
 
-            // 1. STICKY PROGRESS BAR SCROLL LISTENER
+            // Sticky Progress Bar Scroll Listener
             const sec1 = document.getElementById('section-step-1');
             const sec2 = document.getElementById('section-step-2');
             const sec3 = document.getElementById('section-step-3');
@@ -2226,6 +2603,22 @@
 
             window.addEventListener('scroll', updateProgressBar, { passive: true });
             updateProgressBar();
+
+            // FAQ Accordion Interactivity
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    const isActive = item.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(other => {
+                        other.classList.remove('active');
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
         });
 
         // Upload Zone and Elements
@@ -2308,7 +2701,7 @@
             uploadZone.style.display = 'flex';
         });
 
-        // 5. EXIT-INTENT MODAL LOGIC
+        // Exit-Intent Modal Logic
         const exitModal = document.getElementById('exit-intent-modal');
         const exitCloseBtn = document.getElementById('exit-close-btn');
         const exitDiscountForm = document.getElementById('exit-discount-form');
@@ -2350,7 +2743,7 @@
             e.preventDefault();
 
             if (window.location.protocol === 'file:') {
-                alert('⚠️ Please open http://localhost:3000/quote-v2.html in your browser.');
+                alert('⚠️ Please open http://localhost:3000/quote.html in your browser.');
                 return;
             }
 
