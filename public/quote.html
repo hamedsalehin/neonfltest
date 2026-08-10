@@ -1247,13 +1247,7 @@
                 const data = await response.json();
                 if (data.success) {
                     formSubmitted = true;
-                    quoteIdLabel.textContent = 'Request Reference: ' + data.quoteId;
-                    successOverlay.classList.add('show');
-                    quoteForm.reset();
-                    filePreview.style.display = 'none';
-                    uploadZone.style.display = 'flex';
-                    uploadedFileBase64 = null;
-                    uploadedFileName = null;
+                    window.location.href = 'quote-thank-you.html?quote_id=' + encodeURIComponent(data.quoteId);
                 } else {
                     alert('Submission failed: ' + (data.error || 'Server error.'));
                 }
