@@ -1,49 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) for Production -->
-    <script>
-      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        const gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
-        document.head.appendChild(gaScript);
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BWHV4G49TR');
-      }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://neonfl.com/quote.html">
     <title>Request a Custom LED Neon Sign Quote | Nano Neons</title>
     <!-- Description for SEO -->
     <meta name="description" content="Upload your design, logo, or drawing and get a free professional digital neon sign design proof & price quote within 12 hours from Nano Neons.">
-    <!-- UI Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="preload" href="landing.css?v=7" as="style">
-    <link rel="stylesheet" href="landing.css?v=7">
+    
+    <!-- Non-blocking Google Fonts with fallback -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Complete Self-Contained Inlined Critical CSS (0 External CSS Blocking) -->
     <style>
-        /* ─── REQUEST A QUOTE STYLES ───────────────────────────────────────── */
+        :root {
+            --bg-light: #f8fafc;
+            --neon-pink: #ff007f;
+            --neon-cyan: #00c6fb;
+            --neon-purple: #9d4edd;
+            --text-primary: #1e1b4b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
         body {
-            background-color: var(--bg-light, #f8fafc);
-            color: #1e1b4b;
-            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 198, 251, 0.06) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 10%, rgba(255, 0, 127, 0.05) 0%, transparent 40%),
+                        var(--bg-light);
+            color: var(--text-primary);
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.6;
         }
 
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ─── HEADER / NAVIGATION ────────────────────────────────────────────── */
+        header.site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.03);
+        }
+
+        nav.main-nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav.main-nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav.main-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        nav.main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+            transition: width 0.25s ease;
+        }
+
+        nav.main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .glow-btn {
+            position: relative;
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            outline: none;
+            color: #fff;
+            font-family: inherit;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.85) 0%, rgba(0, 198, 251, 0.85) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 6px 18px rgba(255, 0, 127, 0.2), 0 3px 10px rgba(0, 198, 251, 0.15);
+            transition: var(--transition);
+        }
+
+        .glow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(255, 0, 127, 0.3), 0 4px 14px rgba(0, 198, 251, 0.2);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.95) 0%, rgba(0, 198, 251, 0.95) 100%);
+        }
+
+        /* ─── REQUEST A QUOTE CONTAINER & CARD ──────────────────────────────── */
         .quote-container {
             max-width: 800px;
-            margin: 120px auto 60px;
+            margin: 110px auto 60px;
             padding: 0 20px;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .quote-card {
@@ -56,7 +200,6 @@
             overflow: hidden;
         }
 
-        /* Glass decorative blobs */
         .quote-card::before {
             content: '';
             position: absolute;
@@ -83,7 +226,7 @@
 
         .quote-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             position: relative;
             z-index: 2;
         }
@@ -91,44 +234,32 @@
         .quote-header h1 {
             font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             letter-spacing: -0.02em;
-            color: #1e1b4b;
+            color: var(--text-primary);
         }
 
         .quote-header p {
-            color: #475569;
+            color: var(--text-secondary);
             font-size: 1.05rem;
             line-height: 1.6;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Form Layout */
+        /* ─── FORM LAYOUT ────────────────────────────────────────────────────── */
         .quote-form {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
-            gap: 28px;
+            gap: 24px;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-        }
-
-        @media (max-width: 640px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .quote-card {
-                padding: 24px;
-            }
-            .quote-header h1 {
-                font-size: 1.8rem;
-            }
         }
 
         .form-group {
@@ -140,7 +271,7 @@
         .form-group label {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #1e1b4b;
+            color: var(--text-primary);
         }
 
         .form-group input[type="text"],
@@ -150,66 +281,66 @@
         .form-group textarea {
             padding: 14px 16px;
             border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.12);
             background: rgba(248, 250, 252, 0.8);
             font-family: inherit;
             font-size: 0.98rem;
-            color: #1e1b4b;
+            color: var(--text-primary);
             outline: none;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: var(--transition);
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            border-color: #ff007f;
+            border-color: var(--neon-pink);
             background: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 0, 127, 0.08);
+            box-shadow: 0 0 12px rgba(255, 0, 127, 0.1);
         }
 
-        /* Drag & Drop Upload Zone */
+        /* ─── DRAG & DROP UPLOAD ZONE ────────────────────────────────────────── */
         .upload-zone {
-            border: 2px dashed rgba(0, 0, 0, 0.12);
+            border: 2px dashed rgba(0, 0, 0, 0.15);
             border-radius: 16px;
-            padding: 30px;
+            padding: 28px;
             text-align: center;
             background: rgba(248, 250, 252, 0.6);
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .upload-zone:hover, .upload-zone.dragover {
-            border-color: #ff007f;
-            background: rgba(255, 0, 127, 0.02);
+            border-color: var(--neon-pink);
+            background: rgba(255, 0, 127, 0.03);
         }
 
         .upload-icon {
             font-size: 2.2rem;
-            color: #ff007f;
+            color: var(--neon-pink);
         }
 
         .upload-text h3 {
             font-size: 1.05rem;
             font-weight: 700;
-            color: #1e1b4b;
+            color: var(--text-primary);
             margin-bottom: 4px;
         }
 
         .upload-text p {
             font-size: 0.85rem;
-            color: #64748b;
+            color: var(--text-muted);
         }
 
         .file-preview {
             display: none;
-            margin-top: 15px;
+            margin-top: 12px;
             padding: 10px 16px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             align-items: center;
             justify-content: space-between;
@@ -220,16 +351,16 @@
         .file-info {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             overflow: hidden;
         }
 
         .file-thumb {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 6px;
             object-fit: cover;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         .file-meta {
@@ -240,7 +371,7 @@
         .file-name {
             font-size: 0.9rem;
             font-weight: 600;
-            color: #1e1b4b;
+            color: var(--text-primary);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -248,7 +379,7 @@
 
         .file-size {
             font-size: 0.75rem;
-            color: #64748b;
+            color: var(--text-muted);
         }
 
         .remove-file-btn {
@@ -257,15 +388,15 @@
             color: #ef4444;
             font-size: 1.1rem;
             cursor: pointer;
-            padding: 4px;
+            padding: 4px 8px;
             transition: opacity 0.2s;
         }
 
         .remove-file-btn:hover {
-            opacity: 0.8;
+            opacity: 0.75;
         }
 
-        /* Color Swatches selection */
+        /* ─── COLOR SWATCHES SELECTION ───────────────────────────────────────── */
         .colors-container {
             display: flex;
             flex-wrap: wrap;
@@ -283,32 +414,64 @@
             gap: 8px;
             padding: 8px 14px;
             border-radius: 99px;
-            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
             background: #ffffff;
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: var(--transition);
         }
 
         .color-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .color-checkbox:checked + .color-label {
-            border-color: #ff007f;
-            background: rgba(255, 0, 127, 0.04);
-            box-shadow: 0 0 8px rgba(255, 0, 127, 0.1);
+            border-color: var(--neon-pink);
+            background: rgba(255, 0, 127, 0.05);
+            box-shadow: 0 0 8px rgba(255, 0, 127, 0.12);
         }
 
-        /* Premium Liquid Glass Submit Button */
+        /* ─── OPTION PILLS ───────────────────────────────────────────────────── */
+        .options-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .option-radio {
+            display: none;
+        }
+
+        .option-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .option-radio:checked + .option-label {
+            border-color: var(--neon-pink);
+            background: rgba(255, 0, 127, 0.05);
+            color: var(--neon-pink);
+        }
+
+        /* ─── PREMIUM SUBMIT BUTTON ──────────────────────────────────────────── */
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, rgba(255, 0, 127, 0.85) 0%, rgba(0, 198, 251, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.88) 0%, rgba(0, 198, 251, 0.88) 100%);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -318,10 +481,10 @@
             font-weight: 700;
             font-family: inherit;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: var(--transition);
             box-shadow: 
-                0 10px 25px rgba(255, 0, 127, 0.15),
-                0 5px 15px rgba(0, 198, 251, 0.12),
+                0 10px 25px rgba(255, 0, 127, 0.18),
+                0 5px 15px rgba(0, 198, 251, 0.14),
                 inset 0 3px 6px rgba(255, 255, 255, 0.6),
                 inset 0 -3px 6px rgba(0, 0, 0, 0.05);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
@@ -346,10 +509,9 @@
         .submit-btn:hover {
             transform: translateY(-2px) scale(1.005);
             box-shadow: 
-                0 14px 32px rgba(255, 0, 127, 0.22),
-                0 7px 20px rgba(0, 198, 251, 0.18),
-                inset 0 4px 8px rgba(255, 255, 255, 0.7),
-                inset 0 -4px 8px rgba(0, 0, 0, 0.08);
+                0 14px 32px rgba(255, 0, 127, 0.25),
+                0 7px 20px rgba(0, 198, 251, 0.2),
+                inset 0 4px 8px rgba(255, 255, 255, 0.7);
             background: linear-gradient(135deg, rgba(255, 0, 127, 0.95) 0%, rgba(0, 198, 251, 0.95) 100%);
         }
 
@@ -357,17 +519,23 @@
             transform: translateY(1px);
         }
 
-        /* Success dialog overlay */
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ─── SUCCESS MODAL OVERLAY ──────────────────────────────────────────── */
         .success-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(15, 23, 42, 0.4);
+            background: rgba(15, 23, 42, 0.45);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
+            z-index: 2000;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
@@ -385,7 +553,7 @@
             max-width: 500px;
             width: 90%;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.8);
             transform: translateY(20px);
             transition: transform 0.3s ease;
@@ -398,7 +566,7 @@
         .success-icon {
             font-size: 3.5rem;
             color: #10b981;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             animation: pulse 1.5s infinite;
         }
 
@@ -406,25 +574,25 @@
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 12px;
-            color: #1e1b4b;
+            color: var(--text-primary);
         }
 
         .success-card p {
-            color: #475569;
+            color: var(--text-secondary);
             line-height: 1.6;
             font-size: 0.98rem;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         .btn-home-success {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(135deg, rgba(255, 0, 127, 0.8) 0%, rgba(0, 198, 251, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.85) 0%, rgba(0, 198, 251, 0.85) 100%);
             border-radius: 99px;
             color: #fff;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: var(--transition);
             box-shadow: 0 4px 12px rgba(255, 0, 127, 0.15);
         }
 
@@ -433,41 +601,108 @@
             box-shadow: 0 8px 18px rgba(255, 0, 127, 0.25);
         }
 
-        /* Option pills */
-        .options-group {
+        /* ─── FOOTER ─────────────────────────────────────────────────────────── */
+        footer.site-footer {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(200, 200, 220, 0.3);
+            padding: 60px 0 30px;
+            margin-top: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1.5fr repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 14px;
+            max-width: 320px;
+            line-height: 1.5;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
         }
 
-        .option-radio {
-            display: none;
+        .footer-links a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: color 0.2s ease, padding 0.2s ease;
         }
 
-        .option-label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 12px 8px;
-            border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.08);
-            background: #ffffff;
-            cursor: pointer;
-            font-size: 0.82rem;
-            font-weight: 600;
-            transition: all 0.2s;
+        .footer-links a:hover {
+            color: var(--neon-pink);
+            padding-left: 3px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 20px;
             text-align: center;
-        }
-
-        .option-radio:checked + .option-label {
-            border-color: #ff007f;
-            background: rgba(255, 0, 127, 0.04);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.06); }
             100% { transform: scale(1); }
+        }
+
+        /* ─── RESPONSIVE MEDIA QUERIES ───────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .nav-actions, nav.main-nav {
+                display: none;
+            }
+            .nav-wrapper {
+                justify-content: center;
+                height: 64px;
+            }
+            .quote-container {
+                margin: 80px auto 40px;
+                padding: 0 16px;
+            }
+            .quote-card {
+                padding: 24px 18px;
+                border-radius: 20px;
+            }
+            .quote-header h1 {
+                font-size: 1.75rem;
+            }
+            .quote-header p {
+                font-size: 0.95rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                text-align: center;
+            }
+            .footer-brand p {
+                margin: 12px auto 0;
+            }
         }
     </style>
 
@@ -487,7 +722,7 @@
 <body>
 
     <!-- ─── HEADER / NAVIGATION ────────────────────────────────────────────── -->
-    <header class="site-header site-header-scrolled" id="site-header" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);">
+    <header class="site-header" id="site-header">
         <div class="container nav-wrapper">
             <a href="/" class="logo">
                 <img src="logo.webp" alt="Nano Neons" width="160" height="56" fetchpriority="high">
@@ -505,7 +740,7 @@
             </nav>
             
             <div class="nav-actions">
-                <a href="customizer.html" class="glow-btn cyan-glow" style="padding: 10px 24px; font-size: 0.9rem;">
+                <a href="customizer.html" class="glow-btn">
                     Customize Your Own Sign
                 </a>
             </div>
@@ -517,8 +752,8 @@
         <div class="quote-card">
             <div class="quote-header">
                 <h1>Custom LED Neon Sign</h1>
-                <p>Request a Quote</p>
-                <p style="margin-top: 15px; font-size: 0.92rem; color: #64748b;">Have a brand logo, drawing, or design image? Upload your file below, and our designers will send you a free digital design proof & price quote within 12 hours!</p>
+                <p>Request a Free Design Proof & Quote</p>
+                <p style="margin-top: 12px; font-size: 0.92rem; color: #64748b;">Have a brand logo, drawing, or design image? Upload your file below, and our designers will send you a free digital design proof & price quote within 12 hours!</p>
             </div>
 
             <form class="quote-form" id="quote-form">
@@ -526,18 +761,18 @@
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="quote-name">Full Name *</label>
-                        <input type="text" id="quote-name" required placeholder="John Doe">
+                        <input type="text" id="quote-name" required placeholder="John Doe" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="quote-email">Email Address *</label>
-                        <input type="email" id="quote-email" required placeholder="john@example.com">
+                        <input type="email" id="quote-email" required placeholder="john@example.com" autocomplete="email">
                     </div>
                 </div>
 
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="quote-phone">Phone Number *</label>
-                        <input type="tel" id="quote-phone" required placeholder="+1 (555) 000-0000">
+                        <input type="tel" id="quote-phone" required placeholder="+1 (555) 000-0000" autocomplete="tel">
                     </div>
                     <div class="form-group">
                         <label for="quote-size">Preferred Size *</label>
@@ -668,7 +903,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="/" class="logo">
-                    <img src="logo.webp" alt="Nano Neons" style="height: 48px;">
+                    <img src="logo.webp" alt="Nano Neons" width="160" height="56" loading="lazy" style="height: 36px; width: auto;">
                 </a>
                 <p>Premium handcrafted LED neon signs lighting up businesses, events, and homes worldwide. Designed by you, built to perfection.</p>
             </div>
@@ -696,12 +931,41 @@
                 </ul>
             </div>
         </div>
-        <div class="container footer-bottom" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; font-size: 0.88rem; color: #64748b;">
+        <div class="container footer-bottom">
             <p>&copy; 2026 Nano Neons. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ─── SCRIPTS ────────────────────────────────────────────────────────── -->
+    <!-- ─── OPTIMIZED NON-BLOCKING SCRIPTS ─────────────────────────────────── -->
+    <!-- Google Tag Manager / Analytics (Loaded on Idle / User Interaction to prevent FCP/LCP blocking) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWHV4G49TR');
+
+        function loadGoogleAnalytics() {
+            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.gaInitialized) {
+                window.gaInitialized = true;
+                const gaScript = document.createElement('script');
+                gaScript.async = true;
+                gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BWHV4G49TR';
+                document.head.appendChild(gaScript);
+            }
+        }
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGoogleAnalytics, { timeout: 2500 });
+        } else {
+            window.addEventListener('load', () => setTimeout(loadGoogleAnalytics, 1000));
+        }
+
+        ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, loadGoogleAnalytics, { once: true, passive: true });
+        });
+    </script>
+
+    <!-- Main Page Logic -->
     <script>
         // Auto-populate from URL parameter 'ref_sign' (e.g. from gallery lightbox)
         document.addEventListener('DOMContentLoaded', () => {
